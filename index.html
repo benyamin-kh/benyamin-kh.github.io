@@ -162,15 +162,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Added for vertical centering */
+            text-align: center; /* Added for horizontal centering */
             background: #fff;
             color: #1769aa;
             border-radius: 13px;
             box-shadow: 0 2px 18px 0 rgba(17,78,144,0.07);
-            padding: 1.1em 1.2em 1.2em 1.2em;
+            padding: 1.1em 1.2em; /* Adjusted padding slightly for better fit */
             font-size: 1.05rem;
             font-weight: 500;
-            min-width: 145px;
-            min-height: 130px;
+            width: 145px; /* Set a fixed width */
+            height: 130px; /* Set a fixed height */
             text-decoration: none;
             transition: box-shadow .19s, transform .19s, color .15s, background .15s;
             border: none;
@@ -200,9 +202,7 @@
             color: #283b57;
         }
         .contact-value {
-            font-size: 0.96rem;
-            color: #6a7b8c;
-            word-break: break-all;
+            display: none; /* Hide the text values */
         }
 
         @media (max-width: 991px) {
@@ -211,8 +211,8 @@
                 gap: 1.2rem !important;
             }
             .btn-contact {
-                min-width: 0;
-                width: 100%;
+                width: 100%; /* Make boxes full width on small screens */
+                height: 100px; /* Slightly adjust height for smaller screens */
             }
         }
 
@@ -379,7 +379,6 @@
 
     <hr class="section-divider fade-in-up fade-in-delay-3">
 
-    <!-- Improved Contact Section -->
     <section id="contact" class="container py-5 fade-in-up fade-in-delay-3">
         <h2 class="text-center section-heading mb-4">Get in Touch</h2>
         <div class="row justify-content-center">
@@ -387,37 +386,27 @@
                 <div class="card border-0 shadow-lg p-4 contact-card">
                     <p class="lead text-center mb-4">Feel free to reach out if you have any questions or collaboration opportunities!</p>
                     <div class="contact-methods">
-                        <!-- Email -->
                         <a href="mailto:benyamin.khezeli@ce.sharif.edu" class="btn-contact" title="Send Email">
                             <i class="fas fa-envelope contact-icon"></i>
                             <div class="contact-label">Email</div>
-                            <div class="contact-value">benyamin.khezeli@ce.sharif.edu</div>
-                        </a>
-                        <!-- LinkedIn -->
+                            <div class="contact-value"></div> </a>
                         <a href="https://linkedin.com/in/beyamin-khezeli" target="_blank" rel="noopener noreferrer" class="btn-contact" title="LinkedIn">
                             <i class="fab fa-linkedin contact-icon" style="color: #0a66c2;"></i>
                             <div class="contact-label">LinkedIn</div>
-                            <div class="contact-value">beyamin-khezeli</div>
-                        </a>
-                        <!-- Telegram -->
+                            <div class="contact-value"></div> </a>
                         <a href="https://t.me/IamBK79" target="_blank" rel="noopener noreferrer" class="btn-contact" title="Telegram">
                             <i class="fab fa-telegram-plane contact-icon" style="color: #229ed9;"></i>
                             <div class="contact-label">Telegram</div>
-                            <div class="contact-value">@IamBK79</div>
-                        </a>
-                        <!-- Phone -->
+                            <div class="contact-value"></div> </a>
                         <a href="tel:+989100790098" class="btn-contact" title="Phone">
                             <i class="fas fa-phone contact-icon"></i>
                             <div class="contact-label">Phone</div>
-                            <div class="contact-value">+98 910 079 0098</div>
-                        </a>
+                            <div class="contact-value"></div> </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Contact Section -->
-
     <footer class="fade-in-up fade-in-delay-4">
         <div class="container">
             <p class="mb-2">&copy; 2025 Benyamin Khezeli. All rights reserved.</p>

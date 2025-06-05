@@ -19,24 +19,32 @@
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(120deg, #f0f4f9 0%, #eaf1fb 100%);
+            color: #333; /* General text color */
         }
         .navbar {
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            background-color: #343a40 !important; /* Ensuring bg-dark is applied */
         }
         .navbar-brand {
             font-weight: 700;
             font-size: 1.4rem;
             letter-spacing: .5px;
+            color: #fff !important;
         }
         .nav-link {
             font-weight: 400;
             font-size: 1.1rem;
             margin-right: .6rem;
             transition: color .15s;
+            color: rgba(255,255,255,0.75) !important;
         }
         .nav-link:hover, .nav-link.active {
-            color: #1365b9 !important;
+            color: #fff !important;
         }
+        .navbar-toggler-icon {
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
         .hero-section {
             background: linear-gradient(120deg, #e9ecef 60%, #d6e8fa 100%);
             padding: 90px 0 60px 0;
@@ -64,12 +72,23 @@
         }
         .about-text {
             max-width: 750px;
-            margin: 0 auto;
+            margin: 0 auto 1rem auto; /* Added bottom margin */
             line-height: 1.9;
             color: #41506b;
             text-align: justify;
             font-size: 1.15rem;
         }
+        .about-text a {
+            color: #1365b9;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #1365b970;
+        }
+        .about-text a:hover {
+            border-bottom-style: solid;
+             color: #105396;
+        }
+
         .section-heading {
             font-weight: 400;
             color: #1c3144;
@@ -144,12 +163,12 @@
             color: #304d80;
         }
 
-        /* Styling for new list-based sections */
+        /* General list styling for sections like Research, Teaching, Honors, References */
         .list-section ul {
             list-style: none;
             padding-left: 0;
         }
-        .list-section li, .publication-item {
+        .list-section li { 
             background: #fff;
             padding: 18px 22px;
             border-radius: 10px;
@@ -159,35 +178,109 @@
             transition: box-shadow .2s, border-left-color .2s;
             line-height: 1.7;
         }
-        .list-section li:hover, .publication-item:hover {
+        .list-section li:hover { 
             box-shadow: 0 4px 28px rgba(0,0,0,0.1);
             border-left-color: #1769aa80;
         }
-        .list-section li p, .publication-item p {
+        .list-section li p { 
             margin-bottom: 0.3rem;
              color: #495c72;
         }
-        .list-section li strong, .publication-item strong {
+        .list-section li strong { 
             color: #1769aa;
             font-weight: 500;
         }
-        .publication-item a {
+
+        /* Publications section specific styling */
+        .publication-item { 
+            background: #fff;
+            padding: 18px 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 18px rgba(0,0,0,0.05);
+            margin-bottom: 18px;
+            border-left: 5px solid #1769aa20;
+            transition: box-shadow .2s, border-left-color .2s;
+            line-height: 1.7;
+        }
+        .publication-item:hover {
+            box-shadow: 0 4px 28px rgba(0,0,0,0.1);
+            border-left-color: #1769aa80;
+        }
+        .publication-item p {
+            margin-bottom: 0.3rem;
+            color: #495c72;
+        }
+         .publication-item p strong { 
+            color: #1769aa;
+            font-weight: 600; 
+        }
+        .publication-item a { 
             font-weight: 500;
             text-decoration: none;
             color: #1365b9;
             border-bottom: 1px dashed #1365b970;
-            transition: border-color .15s;
+            transition: border-color .15s, color .15s;
         }
          .publication-item a:hover {
             border-bottom-style: solid;
             color: #105396;
          }
 
+        /* MODIFIED: Presentations Section Styling */
+        #presentations .list-section li {
+            background: #fff;
+            padding: 15px 20px; 
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04); 
+            margin-bottom: 15px;
+            border-left: 4px solid #6caade; 
+            line-height: 1.8;
+        }
+        #presentations .list-section li p {
+            margin-bottom: 0; 
+            display: flex; 
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+        #presentations .list-section li p strong {
+            color: #333; /* Color for "Master's Thesis Slides:", etc. */
+            margin-right: 0.5em; 
+            font-weight: 600; 
+            font-family: 'Roboto', sans-serif; /* Ensure it uses the main body font */
+        }
+        .presentation-link {
+            font-family: Arial, Helvetica, sans-serif; /* Different font for the link itself */
+            font-weight: 500;
+            text-decoration: none;
+            color: #0066cc; /* New distinct blue color for the link */
+            border-bottom: 1px solid #99ccff; /* Lighter blue underline */
+            padding: 2px 1px; 
+            margin-right: 8px; 
+            margin-bottom: 5px; 
+            display: inline-block; 
+            transition: color .15s, border-color .15s, background-color .15s;
+        }
+        .presentation-link:hover,
+        .presentation-link:focus {
+            color: #004c99; /* Darker blue on hover */
+            border-bottom-color: #004c99; /* Darker underline on hover */
+            border-bottom-style: solid;
+            background-color: #e6f2ff; /* Very light blue background on hover */
+            outline: none;
+            text-decoration: none;
+        }
+        .presentation-link .fa-external-link-alt {
+            font-size: 0.8em; 
+            margin-left: 3px;
+            opacity: 0.6;
+        }
+
+
         /* Styles for Selected Projects */
         .scrollable-projects-container {
             max-height: 450px; 
             overflow-y: auto;
-            padding: 10px 15px 10px 10px; /* TRBL */
+            padding: 10px 15px 10px 10px; 
             border: 1px solid #dde6f3;
             border-radius: 10px;
             background-color: #f8f9fafd; 
@@ -229,7 +322,7 @@
         /* Skills Section Styling */
         .skills-list dt.skills-category {
             margin-top: 1.5rem;
-            margin-bottom: 0.5rem; /* Reduced to bring dd closer */
+            margin-bottom: 0.5rem; 
             font-size: 1.3rem;
             font-weight: 500;
             color: #1769aa;
@@ -238,19 +331,19 @@
             color: #41506b;
             font-size: 1.05rem;
             line-height: 1.7;
-            margin-left: 0; /* Remove default dl indentation */
-            padding-left: 1.2rem; /* Add some padding for visual structure */
+            margin-left: 0; 
+            padding-left: 1.2rem; 
             position: relative;
             margin-bottom: 0.5rem;
         }
-        .skills-list dd::before { /* Custom bullet */
-            content: "▹"; /* Unicode right-pointing triangle */
+        .skills-list dd::before { 
+            content: "▹"; 
             position: absolute;
             left: 0;
-            color: #1769aa; /* Accent color for bullet */
+            color: #1769aa; 
             font-weight: bold;
-            font-size: 0.9em; /* Slightly smaller bullet */
-            top: 2px; /* Adjust vertical alignment */
+            font-size: 0.9em; 
+            top: 2px; 
         }
 
 
@@ -263,7 +356,7 @@
             border-radius: 10px;
             background-color: #f8f9fafd;
         }
-        .courses-list ul { /* This class is on the scrollable container now */
+        .courses-list ul { 
             list-style: none;
             padding-left: 0;
         }
@@ -289,7 +382,6 @@
             opacity: 0.8;
         }
 
-        /* Improved Contact Section Styles */
         .contact-card {
             border-radius: 18px;  
             background: linear-gradient(120deg, #eaf6ff 60%, #f7fbff 100%);
@@ -385,6 +477,7 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease-in-out forwards;
+            animation-play-state: paused; /* Start paused, JS will play it */
         }
         .fade-in-delay-1 { animation-delay: .15s; }
         .fade-in-delay-2 { animation-delay: .35s; }
@@ -414,7 +507,7 @@
                 margin-right: 0;
             }
             .section-heading {
-                font-size: 1.8rem; /* Adjusted from 1.45rem for better visibility */
+                font-size: 1.8rem;
             }
             .sub-heading {
                 font-size: 1.3rem;
@@ -438,6 +531,18 @@
             .skills-list dd {
                 font-size: 1rem;
                 padding-left: 1rem;
+            }
+            /* Ensure presentation links wrap well on mobile */
+            #presentations .list-section li p {
+                flex-direction: column; /* Stack title and links vertically */
+                align-items: flex-start;
+            }
+            #presentations .list-section li p strong {
+                margin-bottom: 0.3em; /* Space between title and first link when stacked */
+            }
+            .presentation-link {
+                margin-right: 5px; /* Adjust spacing if needed on mobile */
+                margin-bottom: 8px; /* More space when links stack */
             }
         }
     </style>
@@ -556,7 +661,6 @@
                         <p><strong>DADS Lab, Amirkabir University of Technology (AUT)</strong> - (2022-2024)</p>
                         <p>Proposing a Soft Error Tolerant Method for Crossbar-based Processing-in-ReRAM Architecture.</p>
                     </li>
-                    
                 </ul>
             </div>
         </div>
@@ -582,15 +686,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <ul>
-                    <li><p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">View Slides</a></p></li>
-                    <li><p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="publication-item">View Presentation</a></p></li>
-                    <li><p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">View Slides</a></p></li>
-                    <li><p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">View Slides</a></p></li>
+                    <li><p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs ms-1"></i></a></p></li>
+                    <li><p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="presentation-link">View Presentation <i class="fas fa-external-link-alt fa-xs ms-1"></i></a></p></li>
+                    <li><p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs ms-1"></i></a></p></li>
+                    <li><p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs ms-1"></i></a></p></li>
                     <li>
                         <p><strong>Memory Technologies Slides:</strong>
-                            <a href="https://drive.google.com/file/d/1Q8vM7J04LjwtUD-z800ZW3gQ_uHhS6rz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">Slide 1</a>,
-                            <a href="https://drive.google.com/file/d/1n8iOixCkOdrBXSCap7E1ME45VgT9kXOd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">Slide 2</a>,
-                            <a href="https://drive.google.com/file/d/1k6ztrZRcN0f66nZ2L25UX-h3ivniw5Bi/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="publication-item">Slide 3</a>
+                            <a href="https://drive.google.com/file/d/1Q8vM7J04LjwtUD-z800ZW3gQ_uHhS6rz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">1 <i class="fas fa-external-link-alt fa-xs ms-1"></i></a>
+                            <a href="https://drive.google.com/file/d/1n8iOixCkOdrBXSCap7E1ME45VgT9kXOd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">2 <i class="fas fa-external-link-alt fa-xs ms-1"></i></a>
+                            <a href="https://drive.google.com/file/d/1k6ztrZRcN0f66nZ2L25UX-h3ivniw5Bi/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">3 <i class="fas fa-external-link-alt fa-xs ms-1"></i></a>
                         </p>
                     </li>
                 </ul>
@@ -694,7 +798,7 @@
                     <div class="project-item">
                         <h5>SoC Project</h5>
                         <p>Modeling and simulation of hypothetical neuron behavior using SystemC. Image recognition with Chipyard.</p>
-                        <p class="project-details"><strong>Course:</strong> Systems on a Chip | <strong>Instructor:</strong> Dr. Elham Cheshomikhani</p>
+                        <p class="project-details"><strong>Course:</strong> Systems on a Chip | <strong>Instructor:</strong> Dr. Elham Cheshmikhani</p>
                     </div>
                     <div class="project-item">
                         <h5>Advanced Computer Architecture Project</h5>
@@ -850,8 +954,8 @@
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                entry.target.style.animationPlayState = "running";
-                observer.unobserve(entry.target);
+                entry.target.style.animationPlayState = "running"; // Play animation when intersecting
+                observer.unobserve(entry.target); // Stop observing once played
             });
         }, appearOptions);
 
@@ -863,20 +967,19 @@
         const sections = ['about', 'education', 'research', 'publications', 'presentations', 'teaching', 'honors', 'projects', 'skills', 'courses', 'contact', 'references'];
         const navLinks = sections.map(id =>
             document.querySelector(`a.nav-link[href="#${id}"]`)
-        ).filter(link => link != null); // Filter out nulls if a section ID is mistyped or link missing
+        ).filter(link => link != null); 
 
-        const navbarHeight = document.querySelector('.navbar').offsetHeight || 70; // Fallback height
-        const offset = navbarHeight + 30; // Main offset for section detection
+        const navbarHeight = document.querySelector('.navbar').offsetHeight || 70; 
+        const offset = navbarHeight + 30; 
 
         function onScroll() {
-            let scrollPos = window.scrollY || document.documentElement.scrollTop;
+            let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
             let foundActiveSection = false;
 
-            // Special handling for the bottom of the page: highlight the last navigable section if near footer
-            if ((window.innerHeight + scrollPos) >= (document.body.offsetHeight - (navbarHeight + 50))) { // 50px buffer from very bottom
+            if ((window.innerHeight + scrollPos) >= (document.body.offsetHeight - (navbarHeight + 50))) { 
                 navLinks.forEach(link => link.classList.remove('active'));
-                if (navLinks.length > 0) { // Ensure there are links
-                     const lastLink = navLinks[navLinks.length -1]; // usually 'references'
+                if (navLinks.length > 0) { 
+                     const lastLink = navLinks[navLinks.length -1]; 
                      if(lastLink) lastLink.classList.add('active');
                 }
                 return;
@@ -900,40 +1003,23 @@
                 }
             }
 
-            // If no section is actively in view based on the loop (e.g., at the very top before 'about'), default to 'about'
             if (!foundActiveSection && navLinks[0]) {
-                 // Check if scroll position is above the first section's top
                 const firstSection = document.getElementById(sections[0]);
                 if (firstSection && scrollPos < (firstSection.offsetTop - offset)) {
                     navLinks.forEach(link => link.classList.remove('active'));
                     navLinks[0].classList.add('active');
                 } else if (!document.querySelector('.nav-link.active') && navLinks[0]) { 
-                    // Fallback if nothing else is active
                      navLinks[0].classList.add('active');
                 }
             }
         }
 
         window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll(); // Call on load to set initial state
+        onScroll(); 
 
         navLinks.forEach((link) => {
             if (link) {
                 link.addEventListener('click', function (e) {
-                    // Optional: Smooth scroll adjustment if fixed navbar hides content
-                    // e.preventDefault(); // If you want to handle scrolling manually
-                    // const targetId = this.getAttribute('href');
-                    // const targetElement = document.querySelector(targetId);
-                    // if (targetElement) {
-                    //     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    //     const offsetPosition = elementPosition - (navbarHeight + 10); // 10px extra space
-                    //     window.scrollTo({
-                    //         top: offsetPosition,
-                    //         behavior: "smooth"
-                    //     });
-                    // }
-                    
-                    // Simple class update for immediate feedback
                     navLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -942,4 +1028,4 @@
     });
     </script>
 </body>
-</html>
+</ht

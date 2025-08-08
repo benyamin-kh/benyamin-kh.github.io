@@ -371,14 +371,24 @@
             }
         }
         @media (max-width: 375px) {
-            .content-wrapper { padding: 1.5rem 0.75rem; }
-            .section-title { font-size: 1.5rem; }
-            .card-item { padding: 1rem; }
-            .contact-methods { grid-template-columns: 1fr; }
-            .profile-img { width: 100px; height: 100px; }
-            .education-container, #presentations, .skills-grid { max-height: 45vh; }
-            .projects-container, .courses-container { max-height: 35vh; }
+        .content-wrapper { padding: 1.5rem 0.75rem; }
+        .section-title { font-size: 1.5rem; }
+        .card-item { padding: 1rem; }
+        /* keep two circles per row on small iPhones */
+        .contact-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+        /* size so two circles fit nicely */
+        .contact-btn { width: min(44vw, 128px); }
+        .profile-img { width: 100px; height: 100px; }
+        .education-container, #presentations, .skills-grid { max-height: 45vh; }
+        .projects-container, .courses-container { max-height: 35vh; }
         }
+
+/* Optional: only go single-column on ultra-small devices */
+@media (max-width: 320px) {
+  .contact-methods { grid-template-columns: 1fr; }
+  .contact-btn { width: min(72vw, 140px); }
+}
+
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }

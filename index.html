@@ -724,7 +724,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
+        /* Enhanced Mobile Responsive Styles */
         @media (max-width: 991px) {
             :root {
                 --sidebar-width: 280px;
@@ -735,10 +735,12 @@
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
+                width: 280px;
             }
 
             .sidebar.active {
                 transform: translateX(0);
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
             }
 
             .main-content {
@@ -749,16 +751,260 @@
                 display: block;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .content-wrapper {
+                padding: 2rem 1rem;
             }
 
+            /* Section adjustments */
+            section {
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .subsection-title {
+                font-size: 1.25rem;
+                margin: 2rem 0 1rem;
+            }
+
+            /* About section mobile */
+            .about-content {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            /* Card adjustments for mobile */
+            .card-item {
+                padding: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+
+            .card-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .card-details {
+                font-size: 0.85rem;
+            }
+
+            /* Education cards mobile optimization */
             .education-card {
                 flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-container {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto 1rem;
+            }
+
+            /* List items mobile */
+            .list-item {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* Publication items mobile */
+            .publication-item {
+                padding: 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            /* Presentation items mobile */
+            .presentation-item {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .presentation-link {
+                display: inline-block;
+                margin: 0.25rem 0;
+                font-size: 0.875rem;
+            }
+
+            /* Projects mobile */
+            .projects-container {
+                max-height: none;
+                padding: 0;
+                background-color: transparent;
+                border: none;
+            }
+
+            .project-item {
+                padding: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .project-item h5 {
+                font-size: 1rem;
+            }
+
+            .project-details {
+                font-size: 0.85rem;
+            }
+
+            /* Skills grid mobile */
+            .skills-grid {
+                gap: 1rem;
+            }
+
+            .skill-category {
+                padding: 1.25rem;
+            }
+
+            .skill-category h4 {
+                font-size: 1.05rem;
+            }
+
+            .skill-list {
+                font-size: 0.9rem;
+            }
+
+            /* Courses mobile */
+            .courses-container {
+                max-height: none;
+                padding: 0;
+                background-color: transparent;
+                border: none;
+            }
+
+            .course-item {
+                padding: 0.75rem;
+                font-size: 0.85rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .course-grade {
+                font-size: 0.9rem;
+            }
+
+            /* Contact section mobile */
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-card p {
+                font-size: 1rem;
+            }
+
+            .contact-methods {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .contact-btn {
+                padding: 1.25rem 0.75rem;
+            }
+
+            .contact-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .contact-label {
+                font-size: 0.875rem;
+            }
+
+            /* Footer mobile */
+            footer {
+                padding: 2rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            footer a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            /* Profile section mobile */
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-name {
+                font-size: 1.25rem;
+            }
+
+            .profile-title {
+                font-size: 0.875rem;
+            }
+
+            .profile-info {
+                font-size: 0.8rem;
+            }
+
+            /* Navigation mobile */
+            .nav-link {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-icon {
+                font-size: 0.9rem;
+            }
+
+            /* Social links mobile */
+            .social-links {
+                gap: 0.75rem;
+            }
+
+            .social-link {
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
+            }
+
+            /* Sidebar content mobile */
+            .sidebar-content {
+                padding: 2rem 1.25rem;
+            }
+
+            /* Remove hover effects on mobile */
+            @media (hover: none) {
+                .card-item:hover,
+                .list-item:hover,
+                .publication-item:hover,
+                .presentation-item:hover,
+                .project-item:hover,
+                .skill-category:hover,
+                .course-item:hover {
+                    transform: none;
+                }
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 375px) {
+            .content-wrapper {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .card-item {
+                padding: 1rem;
             }
 
             .contact-methods {
                 grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
             }
         }
 
@@ -1447,6 +1693,18 @@
                     sidebar.classList.remove('active');
                 }
             });
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 767) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+                
+                if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            }
         });
 
         // Active navigation highlight

@@ -110,6 +110,28 @@
             line-height: 1.4;
         }
 
+        /* CV Download Button in Sidebar */
+        .cv-download-sidebar {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-green);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .cv-download-sidebar:hover {
+            background-color: var(--accent-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+            color: var(--bg-primary);
+        }
+
         /* Navigation */
         .nav-menu {
             list-style: none;
@@ -166,6 +188,7 @@
             width: 20px;
             text-align: center;
             font-size: 1rem;
+            color: inherit; /* Fixed: Ensure icon inherits color from parent */
         }
 
         /* Social Links */
@@ -274,6 +297,8 @@
             margin: 2.5rem 0 1.5rem;
             color: var(--accent-green);
         }
+
+
 
         /* About Section */
         .about-content {
@@ -776,12 +801,146 @@
                 text-align: left;
             }
 
-            /* Card adjustments for mobile */
-            .card-item {
+            /* Mobile Scrollable Sections */
+            /* Education section mobile scrollable */
+            #education .card-item {
                 padding: 1.25rem;
                 margin-bottom: 1rem;
             }
 
+            #education {
+                max-height: 60vh;
+                overflow-y: auto;
+                padding-right: 0.5rem;
+            }
+
+            #education::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            #education::-webkit-scrollbar-track {
+                background: var(--bg-primary);
+                border-radius: 3px;
+            }
+
+            #education::-webkit-scrollbar-thumb {
+                background: var(--accent-green-dark);
+                border-radius: 3px;
+            }
+
+            /* Presentations mobile scrollable */
+            #presentations .presentation-item {
+                padding: 1rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
+            }
+
+            #presentations .presentation-item:last-child {
+                margin-bottom: 0;
+            }
+
+            #presentations {
+                max-height: 50vh;
+                overflow-y: auto;
+                padding-right: 0.5rem;
+            }
+
+            #presentations::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            #presentations::-webkit-scrollbar-track {
+                background: var(--bg-primary);
+                border-radius: 3px;
+            }
+
+            #presentations::-webkit-scrollbar-thumb {
+                background: var(--accent-green-dark);
+                border-radius: 3px;
+            }
+
+            .presentation-link {
+                display: inline-block;
+                margin: 0.25rem 0;
+                font-size: 0.875rem;
+            }
+
+            /* Projects mobile scrollable */
+            .projects-container {
+                max-height: 40vh;
+                padding: 0.75rem;
+                background-color: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+            }
+
+            .project-item {
+                padding: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .project-item h5 {
+                font-size: 1rem;
+            }
+
+            .project-details {
+                font-size: 0.85rem;
+            }
+
+            /* Skills grid mobile scrollable */
+            .skills-grid {
+                gap: 1rem;
+                max-height: 50vh;
+                overflow-y: auto;
+                padding-right: 0.5rem;
+            }
+
+            .skills-grid::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .skills-grid::-webkit-scrollbar-track {
+                background: var(--bg-primary);
+                border-radius: 3px;
+            }
+
+            .skills-grid::-webkit-scrollbar-thumb {
+                background: var(--accent-green-dark);
+                border-radius: 3px;
+            }
+
+            .skill-category {
+                padding: 1.25rem;
+            }
+
+            .skill-category h4 {
+                font-size: 1.05rem;
+            }
+
+            .skill-list {
+                font-size: 0.9rem;
+            }
+
+            /* Courses mobile scrollable */
+            .courses-container {
+                max-height: 40vh;
+                padding: 0.75rem;
+                background-color: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+            }
+
+            .course-item {
+                padding: 0.75rem;
+                font-size: 0.85rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .course-grade {
+                font-size: 0.9rem;
+            }
+
+            /* Card adjustments for mobile */
             .card-title {
                 font-size: 1.1rem;
             }
@@ -815,76 +974,6 @@
             /* Publication items mobile */
             .publication-item {
                 padding: 1.25rem;
-                font-size: 0.9rem;
-            }
-
-            /* Presentation items mobile */
-            .presentation-item {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .presentation-link {
-                display: inline-block;
-                margin: 0.25rem 0;
-                font-size: 0.875rem;
-            }
-
-            /* Projects mobile */
-            .projects-container {
-                max-height: none;
-                padding: 0;
-                background-color: transparent;
-                border: none;
-            }
-
-            .project-item {
-                padding: 1.25rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .project-item h5 {
-                font-size: 1rem;
-            }
-
-            .project-details {
-                font-size: 0.85rem;
-            }
-
-            /* Skills grid mobile */
-            .skills-grid {
-                gap: 1rem;
-            }
-
-            .skill-category {
-                padding: 1.25rem;
-            }
-
-            .skill-category h4 {
-                font-size: 1.05rem;
-            }
-
-            .skill-list {
-                font-size: 0.9rem;
-            }
-
-            /* Courses mobile */
-            .courses-container {
-                max-height: none;
-                padding: 0;
-                background-color: transparent;
-                border: none;
-            }
-
-            .course-item {
-                padding: 0.75rem;
-                font-size: 0.85rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
-            }
-
-            .course-grade {
                 font-size: 0.9rem;
             }
 
@@ -943,6 +1032,14 @@
             .profile-info {
                 font-size: 0.8rem;
             }
+
+            /* CV download button mobile */
+            .cv-download-sidebar {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+
 
             /* Navigation mobile */
             .nav-link {
@@ -1005,6 +1102,18 @@
             .profile-img {
                 width: 100px;
                 height: 100px;
+            }
+
+            /* Further reduce scrollable heights on very small screens */
+            #education,
+            #presentations,
+            .skills-grid {
+                max-height: 45vh;
+            }
+
+            .projects-container,
+            .courses-container {
+                max-height: 35vh;
             }
         }
 
@@ -1074,6 +1183,12 @@
                 <h1 class="profile-name">Benyamin Khezeli</h1>
                 <p class="profile-title">PhD Student</p>
                 <p class="profile-info">Computer Engineering<br>Sharif University of Technology</p>
+                <a href="https://drive.google.com/file/d/1KF-G64fPX7KJ8UJTsrrcjpDLxj6mLVI5/view?usp=sharing" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="cv-download-sidebar">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
 
             <nav>
@@ -1104,7 +1219,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#presentations" class="nav-link">
-                            <i class="fas fa-presentation nav-icon"></i>
+                            <i class="fas fa-chalkboard-teacher nav-icon"></i>
                             Presentations
                         </a>
                     </li>

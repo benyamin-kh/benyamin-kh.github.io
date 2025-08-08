@@ -298,8 +298,6 @@
             color: var(--accent-green);
         }
 
-
-
         /* About Section */
         .about-content {
             font-size: 1.1rem;
@@ -555,44 +553,89 @@
             color: var(--text-secondary);
         }
 
-        /* Skills */
+        /* Optimized Skills Section */
+        .skills-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent-green-light) 0%, transparent 70%);
+            opacity: 0.3;
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
         .skills-grid {
             display: grid;
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .skill-category {
-            background-color: var(--bg-card);
+            background-color: var(--bg-hover);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             transition: all 0.3s ease;
+            border-left: 3px solid var(--accent-green-dark);
         }
 
         .skill-category:hover {
-            border-color: var(--accent-green-dark);
-            background-color: var(--bg-hover);
+            border-left-color: var(--accent-green);
+            background-color: var(--bg-secondary);
+            transform: translateX(3px);
         }
 
         .skill-category h4 {
             color: var(--accent-green);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .skill-category h4::before {
-            content: '▹';
-            color: var(--accent-green);
-            font-size: 1.5rem;
+        .skill-category h4 i {
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
         }
 
-        .skill-list {
-            color: var(--text-secondary);
-            line-height: 1.8;
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-green-light);
+            color: var(--accent-green);
+            padding: 0.3rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--accent-green-dark);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--accent-green);
+            color: var(--bg-primary);
+            transform: translateY(-1px);
         }
 
         /* Courses */
@@ -886,8 +929,13 @@
                 font-size: 0.85rem;
             }
 
-            /* Skills grid mobile scrollable */
+            /* Skills mobile optimization */
+            .skills-container {
+                padding: 1.5rem;
+            }
+
             .skills-grid {
+                grid-template-columns: 1fr;
                 gap: 1rem;
                 max-height: 50vh;
                 overflow-y: auto;
@@ -909,15 +957,17 @@
             }
 
             .skill-category {
-                padding: 1.25rem;
+                padding: 1rem;
             }
 
             .skill-category h4 {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
             }
 
-            .skill-list {
-                font-size: 0.9rem;
+            .skill-tag {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.6rem;
             }
 
             /* Courses mobile scrollable */
@@ -1038,8 +1088,6 @@
                 font-size: 0.75rem;
                 padding: 0.4rem 0.8rem;
             }
-
-
 
             /* Navigation mobile */
             .nav-link {
@@ -1580,30 +1628,59 @@
             <section id="skills">
                 <h2 class="section-title">Technical Skills</h2>
                 
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <p class="skill-list">C, Java, Python, VHDL, Assembly, SystemC</p>
-                    </div>
+                <div class="skills-container">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-code"></i>Programming Languages</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">VHDL</span>
+                                <span class="skill-tag">Assembly</span>
+                                <span class="skill-tag">SystemC</span>
+                            </div>
+                        </div>
 
-                    <div class="skill-category">
-                        <h4>Tools & Simulators</h4>
-                        <p class="skill-list">HSPICE, Xilinx Vivado, Active HDL, gem5, Jupyter Notebook, Microsoft Office, Git, Proteus, Microsoft Visual Studio, ModelSim</p>
-                    </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-tools"></i>Tools & Simulators</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">HSPICE</span>
+                                <span class="skill-tag">Xilinx Vivado</span>
+                                <span class="skill-tag">Active HDL</span>
+                                <span class="skill-tag">gem5</span>
+                                <span class="skill-tag">Jupyter Notebook</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Proteus</span>
+                                <span class="skill-tag">Visual Studio</span>
+                                <span class="skill-tag">ModelSim</span>
+                            </div>
+                        </div>
 
-                    <div class="skill-category">
-                        <h4>Deep Learning Tools</h4>
-                        <p class="skill-list">Keras, PyTorch</p>
-                    </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-brain"></i>Deep Learning</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">Keras</span>
+                                <span class="skill-tag">PyTorch</span>
+                            </div>
+                        </div>
 
-                    <div class="skill-category">
-                        <h4>Operating Systems</h4>
-                        <p class="skill-list">Windows, macOS, Ubuntu (Linux)</p>
-                    </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-desktop"></i>Operating Systems</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">Windows</span>
+                                <span class="skill-tag">macOS</span>
+                                <span class="skill-tag">Ubuntu (Linux)</span>
+                            </div>
+                        </div>
 
-                    <div class="skill-category">
-                        <h4>Languages</h4>
-                        <p class="skill-list">Persian (Native), English (Upper-Intermediate)</p>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-language"></i>Languages</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">Persian (Native)</span>
+                                <span class="skill-tag">English (Upper-Intermediate)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

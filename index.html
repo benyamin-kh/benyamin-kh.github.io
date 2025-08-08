@@ -1,3 +1,6 @@
+Here’s a complete, fixed **index5.html** with circular, centered, and mobile-friendly “Get in Touch” buttons. You can replace your file with this as-is.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +32,8 @@
             --content-max-width: 900px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,82 +45,35 @@
 
         /* Sidebar Styles */
         .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
+            position: fixed; top: 0; left: 0;
+            width: var(--sidebar-width); height: 100vh;
             background-color: var(--bg-secondary);
             border-right: 1px solid var(--border-color);
-            overflow-y: auto;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
+            overflow-y: auto; z-index: 1000;
+            display: flex; flex-direction: column;
         }
 
-        .sidebar-content {
-            padding: 2.5rem 1.5rem;
-            flex: 1;
-        }
-
-        .profile-section {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+        .sidebar-content { padding: 2.5rem 1.5rem; flex: 1; }
+        .profile-section { text-align: center; margin-bottom: 3rem; }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-green);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
+            width: 160px; height: 160px; border-radius: 50%;
+            object-fit: cover; border: 3px solid var(--accent-green);
+            margin-bottom: 1.5rem; transition: all 0.3s ease;
             box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
         }
+        .profile-img:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 255, 136, 0.5); }
 
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
-        }
+        .profile-name { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .profile-title { font-size: 0.95rem; color: var(--accent-green); font-weight: 500; margin-bottom: 1rem; }
+        .profile-info { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.4; }
 
-        .profile-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .profile-title {
-            font-size: 0.95rem;
-            color: var(--accent-green);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .profile-info {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
-        }
-
-        /* CV Download Button in Sidebar */
         .cv-download-sidebar {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--accent-green);
-            color: var(--bg-primary);
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
+            display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem;
+            background-color: var(--accent-green); color: var(--bg-primary);
+            text-decoration: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+            transition: all 0.3s ease; text-align: center;
         }
-
         .cv-download-sidebar:hover {
             background-color: var(--accent-green-dark);
             transform: translateY(-2px);
@@ -133,556 +82,164 @@
         }
 
         /* Navigation */
-        .nav-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-item {
-            margin-bottom: 0.25rem;
-        }
-
+        .nav-menu { list-style: none; padding: 0; margin: 0; }
+        .nav-item { margin-bottom: 0.25rem; }
         .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
+            display: flex; align-items: center; padding: 0.75rem 1rem;
+            color: var(--text-secondary); text-decoration: none; border-radius: 8px;
+            transition: all 0.2s ease; font-size: 0.95rem; position: relative; overflow: hidden;
         }
-
         .nav-link::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background-color: var(--accent-green);
-            transform: translateX(-100%);
-            transition: transform 0.2s ease;
+            content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%;
+            background-color: var(--accent-green); transform: translateX(-100%); transition: transform 0.2s ease;
         }
-
-        .nav-link:hover {
-            color: var(--text-primary);
-            background-color: var(--bg-hover);
-            transform: translateX(3px);
-        }
-
-        .nav-link.active {
-            color: var(--accent-green);
-            background-color: var(--accent-green-light);
-        }
-
-        .nav-link.active::before {
-            transform: translateX(0);
-        }
-
-        .nav-icon {
-            margin-right: 0.75rem;
-            width: 20px;
-            text-align: center;
-            font-size: 1rem;
-            color: inherit; /* Fixed: Ensure icon inherits color from parent */
-        }
+        .nav-link:hover { color: var(--text-primary); background-color: var(--bg-hover); transform: translateX(3px); }
+        .nav-link.active { color: var(--accent-green); background-color: var(--accent-green-light); }
+        .nav-link.active::before { transform: translateX(0); }
+        .nav-icon { margin-right: 0.75rem; width: 20px; text-align: center; font-size: 1rem; color: inherit; }
 
         /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--bg-card);
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            background-color: var(--bg-card); color: var(--text-secondary);
+            text-decoration: none; transition: all 0.3s ease; border: 1px solid var(--border-color);
         }
-
-        .social-link:hover {
-            color: var(--accent-green);
-            background-color: var(--accent-green-light);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-        }
+        .social-link:hover { color: var(--accent-green); background-color: var(--accent-green-light); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); }
 
         /* Main Content */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            min-height: 100vh;
-            background-color: var(--bg-primary);
-        }
-
-        .content-wrapper {
-            max-width: var(--content-max-width);
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
+        .main-content { margin-left: var(--sidebar-width); min-height: 100vh; background-color: var(--bg-primary); }
+        .content-wrapper { max-width: var(--content-max-width); margin: 0 auto; padding: 3rem 2rem; }
 
         /* Mobile Toggle */
         .mobile-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1001;
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.75rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            display: none; position: fixed; top: 1rem; right: 1rem; z-index: 1001;
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            color: var(--text-primary); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
         }
-
-        .mobile-toggle:hover {
-            background-color: var(--accent-green);
-            color: var(--bg-primary);
-        }
+        .mobile-toggle:hover { background-color: var(--accent-green); color: var(--bg-primary); }
 
         /* Section Styles */
-        section {
-            margin-bottom: 5rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        section { margin-bottom: 5rem; opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s ease forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-            position: relative;
-            display: inline-block;
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-primary);
+            position: relative; display: inline-block;
         }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-green);
-            border-radius: 2px;
-        }
-
-        .subsection-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1.5rem;
-            color: var(--accent-green);
-        }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background-color: var(--accent-green); border-radius: 2px; }
+        .subsection-title { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1.5rem; color: var(--accent-green); }
 
         /* About Section */
-        .about-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            text-align: justify;
-        }
-
-        .about-content a {
-            color: var(--accent-green);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent-green);
-            transition: all 0.2s ease;
-        }
-
-        .about-content a:hover {
-            color: var(--accent-green-dark);
-            border-bottom-style: solid;
-        }
+        .about-content { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); text-align: justify; }
+        .about-content a { color: var(--accent-green); text-decoration: none; border-bottom: 1px dotted var(--accent-green); transition: all 0.2s ease; }
+        .about-content a:hover { color: var(--accent-green-dark); border-bottom-style: solid; }
 
         /* Cards */
         .card-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px;
+            padding: 1.75rem; margin-bottom: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;
         }
+        .card-item::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background-color: var(--accent-green); transform: scaleY(0); transition: transform 0.3s ease; }
+        .card-item:hover { transform: translateX(5px); background-color: var(--bg-hover); border-color: var(--accent-green-dark); }
+        .card-item:hover::before { transform: scaleY(1); }
+        .card-title { font-size: 1.25rem; font-weight: 600; color: var(--accent-green); margin-bottom: 0.75rem; }
+        .card-title a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+        .card-title a:hover { color: var(--accent-green-dark); }
+        .card-subtitle { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .card-details { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .card-details strong { color: var(--text-primary); }
 
-        .card-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--accent-green);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .card-item:hover {
-            transform: translateX(5px);
-            background-color: var(--bg-hover);
-            border-color: var(--accent-green-dark);
-        }
-
-        .card-item:hover::before {
-            transform: scaleY(1);
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--accent-green);
-            margin-bottom: 0.75rem;
-        }
-
-        .card-title a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .card-title a:hover {
-            color: var(--accent-green-dark);
-        }
-
-        .card-subtitle {
-            font-size: 1rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .card-details {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .card-details strong {
-            color: var(--text-primary);
-        }
-
-        /* Education Cards with Logos */
-        .education-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
+        /* Education */
+        #education { position: relative; }
+        .education-container { max-height: 70vh; overflow-y: auto; padding-right: 0.5rem; }
+        .education-container::-webkit-scrollbar { width: 8px; }
+        .education-container::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 4px; }
+        .education-container::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 4px; }
+        .education-container::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+        .education-card { display: flex; align-items: flex-start; gap: 1.5rem; }
         .logo-container {
-            flex-shrink: 0;
-            width: 70px;
-            height: 70px;
-            background-color: var(--bg-hover);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-color);
+            flex-shrink: 0; width: 70px; height: 70px; background-color: var(--bg-hover);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-color);
         }
-
-        .university-logo {
-            max-width: 85%;
-            max-height: 85%;
-            object-fit: contain;
-            filter: brightness(0.9);
-        }
+        .university-logo { max-width: 85%; max-height: 85%; object-fit: contain; filter: brightness(0.9); }
 
         /* List Items */
         .list-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            border-left: 3px solid var(--accent-green-dark);
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s ease; border-left: 3px solid var(--accent-green-dark);
         }
+        .list-item:hover { background-color: var(--bg-hover); transform: translateX(5px); border-left-color: var(--accent-green); }
+        .list-item p { margin-bottom: 0.5rem; color: var(--text-secondary); }
+        .list-item strong { color: var(--accent-green); }
 
-        .list-item:hover {
-            background-color: var(--bg-hover);
-            transform: translateX(5px);
-            border-left-color: var(--accent-green);
-        }
-
-        .list-item p {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .list-item strong {
-            color: var(--accent-green);
-        }
-
-        /* Publication Items */
+        /* Publications */
         .publication-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s ease;
-            border-left: 3px solid var(--accent-green-dark);
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 1.5rem; margin-bottom: 1.25rem; transition: all 0.3s ease; border-left: 3px solid var(--accent-green-dark);
         }
-
-        .publication-item:hover {
-            background-color: var(--bg-hover);
-            transform: translateX(5px);
-            border-left-color: var(--accent-green);
-        }
-
-        .publication-item a {
-            color: var(--accent-green);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .publication-item a:hover {
-            color: var(--accent-green-dark);
-            text-decoration: underline;
-        }
+        .publication-item:hover { background-color: var(--bg-hover); transform: translateX(5px); border-left-color: var(--accent-green); }
+        .publication-item a { color: var(--accent-green); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .publication-item a:hover { color: var(--accent-green-dark); text-decoration: underline; }
 
         /* Presentations */
-        .presentation-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .presentation-item:hover {
-            background-color: var(--bg-hover);
-            transform: translateX(5px);
-        }
-
+        .presentation-item { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s ease; }
+        .presentation-item:hover { background-color: var(--bg-hover); transform: translateX(5px); }
         .presentation-link {
-            color: var(--accent-green);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.25rem 0.5rem;
-            margin: 0 0.25rem;
-            border-radius: 4px;
-            background-color: var(--accent-green-light);
-            transition: all 0.2s ease;
-            display: inline-block;
+            color: var(--accent-green); text-decoration: none; font-weight: 500; padding: 0.25rem 0.5rem; margin: 0 0.25rem;
+            border-radius: 4px; background-color: var(--accent-green-light); transition: all 0.2s ease; display: inline-block;
         }
-
-        .presentation-link:hover {
-            background-color: var(--accent-green);
-            color: var(--bg-primary);
-        }
+        .presentation-link:hover { background-color: var(--accent-green); color: var(--bg-primary); }
 
         /* Projects */
         .projects-container {
-            max-height: 500px;
-            overflow-y: auto;
-            padding: 1rem;
-            background-color: var(--bg-secondary);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+            max-height: 500px; overflow-y: auto; padding: 1rem; background-color: var(--bg-secondary);
+            border-radius: 12px; border: 1px solid var(--border-color);
         }
+        .projects-container::-webkit-scrollbar { width: 8px; }
+        .projects-container::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 4px; }
+        .projects-container::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 4px; }
+        .projects-container::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+        .project-item { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; transition: all 0.3s ease; }
+        .project-item:hover { background-color: var(--bg-hover); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1); }
+        .project-item h5 { color: var(--accent-green); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .project-details { font-size: 0.9rem; color: var(--text-secondary); }
 
-        .projects-container::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .projects-container::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-            border-radius: 4px;
-        }
-
-        .projects-container::-webkit-scrollbar-thumb {
-            background: var(--accent-green-dark);
-            border-radius: 4px;
-        }
-
-        .projects-container::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-green);
-        }
-
-        .project-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .project-item:hover {
-            background-color: var(--bg-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
-        }
-
-        .project-item h5 {
-            color: var(--accent-green);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-details {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Optimized Skills Section */
+        /* Skills */
         .skills-container {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
         }
-
         .skills-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, var(--accent-green-light) 0%, transparent 70%);
-            opacity: 0.3;
-            border-radius: 50%;
-            transform: translate(30px, -30px);
+            content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px;
+            background: radial-gradient(circle, var(--accent-green-light) 0%, transparent 70%); opacity: 0.3; border-radius: 50%; transform: translate(30px, -30px);
         }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; position: relative; z-index: 1; }
         .skill-category {
-            background-color: var(--bg-hover);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: all 0.3s ease;
-            border-left: 3px solid var(--accent-green-dark);
+            background-color: var(--bg-hover); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;
+            transition: all 0.3s ease; border-left: 3px solid var(--accent-green-dark);
         }
-
-        .skill-category:hover {
-            border-left-color: var(--accent-green);
-            background-color: var(--bg-secondary);
-            transform: translateX(3px);
-        }
-
-        .skill-category h4 {
-            color: var(--accent-green);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-category h4 i {
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
+        .skill-category:hover { border-left-color: var(--accent-green); background-color: var(--bg-secondary); transform: translateX(3px); }
+        .skill-category h4 { color: var(--accent-green); font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .skill-category h4 i { font-size: 1.1rem; width: 20px; text-align: center; }
+        .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .skill-tag {
-            background-color: var(--accent-green-light);
-            color: var(--accent-green);
-            padding: 0.3rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid var(--accent-green-dark);
+            background-color: var(--accent-green-light); color: var(--accent-green);
+            padding: 0.3rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--accent-green-dark);
             transition: all 0.2s ease;
         }
-
-        .skill-tag:hover {
-            background-color: var(--accent-green);
-            color: var(--bg-primary);
-            transform: translateY(-1px);
-        }
+        .skill-tag:hover { background-color: var(--accent-green); color: var(--bg-primary); transform: translateY(-1px); }
 
         /* Courses */
         .courses-container {
-            max-height: 400px;
-            overflow-y: auto;
-            background-color: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
+            max-height: 400px; overflow-y: auto; background-color: var(--bg-secondary); border-radius: 12px; padding: 1rem; border: 1px solid var(--border-color);
         }
-
-        .courses-container::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .courses-container::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-            border-radius: 4px;
-        }
-
-        .courses-container::-webkit-scrollbar-thumb {
-            background: var(--accent-green-dark);
-            border-radius: 4px;
-        }
-
-        .course-item {
-            background-color: var(--bg-card);
-            border-radius: 6px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.2s ease;
-        }
-
-        .course-item:hover {
-            background-color: var(--bg-hover);
-            transform: translateX(5px);
-        }
-
-        .course-grade {
-            color: var(--accent-green);
-            font-weight: 600;
-            font-family: 'Fira Code', monospace;
-        }
+        .courses-container::-webkit-scrollbar { width: 8px; }
+        .courses-container::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 4px; }
+        .courses-container::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 4px; }
+        .course-item { background-color: var(--bg-card); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+        .course-item:hover { background-color: var(--bg-hover); transform: translateX(5px); }
+        .course-grade { color: var(--accent-green); font-weight: 600; font-family: 'Fira Code', monospace; }
 
         /* Contact Section */
         .contact-card {
@@ -694,528 +251,307 @@
             position: relative;
             overflow: hidden;
         }
-
         .contact-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
+            content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, var(--accent-green-light) 0%, transparent 70%);
-            opacity: 0.1;
-            animation: pulse 4s ease-in-out infinite;
+            opacity: 0.1; animation: pulse 4s ease-in-out infinite;
         }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
+        /* NEW: responsive circular buttons + centered grid */
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            justify-items: center;
+            align-items: center;
         }
-
         .contact-btn {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
+            background-color: var(--bg-hover);
+            border: 2px solid var(--accent-green-dark);
+            border-radius: 50%;
+            width: clamp(90px, 22vw, 120px);
+            aspect-ratio: 1 / 1; /* perfect circle */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
-            color: var(--text-secondary);
+            color: var(--accent-green-dark);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
+        .contact-btn:hover {
+            color: var(--accent-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 204, 106, 0.3);
+            border-color: var(--accent-green);
+            background-color: var(--bg-secondary);
+        }
         .contact-btn::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background-color: var(--accent-green-light);
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background-color: var(--accent-green-dark);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
+            opacity: 0.3;
         }
-
-        .contact-btn:hover {
-            color: var(--accent-green);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-            border-color: var(--accent-green);
-        }
-
-        .contact-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-label {
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
-        }
+        .contact-btn:hover::before { width: 200px; height: 200px; }
+        .contact-icon { font-size: clamp(1.1rem, 2.8vw, 1.5rem); margin-bottom: 0.35rem; position: relative; z-index: 1; }
+        .contact-label { font-weight: 500; font-size: clamp(0.75rem, 2.3vw, 0.9rem); position: relative; z-index: 1; }
 
         /* Footer */
-        footer {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--text-secondary);
-        }
+        footer { background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 3rem 0; text-align: center; color: var(--text-secondary); }
+        footer a { color: var(--accent-green); text-decoration: none; margin: 0 1rem; transition: color 0.2s ease; }
+        footer a:hover { color: var(--accent-green-dark); text-decoration: underline; }
 
-        footer a {
-            color: var(--accent-green);
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.2s ease;
-        }
-
-        footer a:hover {
-            color: var(--accent-green-dark);
-            text-decoration: underline;
-        }
-
-        /* Enhanced Mobile Responsive Styles */
-        @media (max-width: 991px) {
-            :root {
-                --sidebar-width: 280px;
-            }
-        }
-
+        /* Enhanced Mobile Responsive */
+        @media (max-width: 991px) { :root { --sidebar-width: 280px; } }
         @media (max-width: 767px) {
-            .sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                width: 280px;
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
-                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .content-wrapper {
-                padding: 2rem 1rem;
-            }
-
-            /* Section adjustments */
-            section {
-                margin-bottom: 3rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .subsection-title {
-                font-size: 1.25rem;
-                margin: 2rem 0 1rem;
-            }
-
-            /* About section mobile */
-            .about-content {
-                font-size: 1rem;
-                text-align: left;
-            }
-
-            /* Mobile Scrollable Sections */
-            /* Education section mobile scrollable */
-            #education .card-item {
-                padding: 1.25rem;
-                margin-bottom: 1rem;
-            }
-
-            #education {
-                max-height: 60vh;
-                overflow-y: auto;
-                padding-right: 0.5rem;
-            }
-
-            #education::-webkit-scrollbar {
-                width: 6px;
-            }
-
-            #education::-webkit-scrollbar-track {
-                background: var(--bg-primary);
-                border-radius: 3px;
-            }
-
-            #education::-webkit-scrollbar-thumb {
-                background: var(--accent-green-dark);
-                border-radius: 3px;
-            }
-
-            /* Presentations mobile scrollable */
-            #presentations .presentation-item {
-                padding: 1rem;
-                font-size: 0.9rem;
-                margin-bottom: 0.75rem;
-            }
-
-            #presentations .presentation-item:last-child {
-                margin-bottom: 0;
-            }
-
-            #presentations {
-                max-height: 50vh;
-                overflow-y: auto;
-                padding-right: 0.5rem;
-            }
-
-            #presentations::-webkit-scrollbar {
-                width: 6px;
-            }
-
-            #presentations::-webkit-scrollbar-track {
-                background: var(--bg-primary);
-                border-radius: 3px;
-            }
-
-            #presentations::-webkit-scrollbar-thumb {
-                background: var(--accent-green-dark);
-                border-radius: 3px;
-            }
-
-            .presentation-link {
-                display: inline-block;
-                margin: 0.25rem 0;
-                font-size: 0.875rem;
-            }
-
-            /* Projects mobile scrollable */
-            .projects-container {
-                max-height: 40vh;
-                padding: 0.75rem;
-                background-color: var(--bg-secondary);
-                border: 1px solid var(--border-color);
-            }
-
-            .project-item {
-                padding: 1.25rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .project-item h5 {
-                font-size: 1rem;
-            }
-
-            .project-details {
-                font-size: 0.85rem;
-            }
-
-            /* Skills mobile optimization */
-            .skills-container {
-                padding: 1.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                max-height: 50vh;
-                overflow-y: auto;
-                padding-right: 0.5rem;
-            }
-
-            .skills-grid::-webkit-scrollbar {
-                width: 6px;
-            }
-
-            .skills-grid::-webkit-scrollbar-track {
-                background: var(--bg-primary);
-                border-radius: 3px;
-            }
-
-            .skills-grid::-webkit-scrollbar-thumb {
-                background: var(--accent-green-dark);
-                border-radius: 3px;
-            }
-
-            .skill-category {
-                padding: 1rem;
-            }
-
-            .skill-category h4 {
-                font-size: 0.95rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .skill-tag {
-                font-size: 0.75rem;
-                padding: 0.25rem 0.6rem;
-            }
-
-            /* Courses mobile scrollable */
-            .courses-container {
-                max-height: 40vh;
-                padding: 0.75rem;
-                background-color: var(--bg-secondary);
-                border: 1px solid var(--border-color);
-            }
-
-            .course-item {
-                padding: 0.75rem;
-                font-size: 0.85rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
-            }
-
-            .course-grade {
-                font-size: 0.9rem;
-            }
-
-            /* Card adjustments for mobile */
-            .card-title {
-                font-size: 1.1rem;
-            }
-
-            .card-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .card-details {
-                font-size: 0.85rem;
-            }
-
-            /* Education cards mobile optimization */
-            .education-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo-container {
-                width: 60px;
-                height: 60px;
-                margin: 0 auto 1rem;
-            }
-
-            /* List items mobile */
-            .list-item {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-
-            /* Publication items mobile */
-            .publication-item {
-                padding: 1.25rem;
-                font-size: 0.9rem;
-            }
-
-            /* Contact section mobile */
-            .contact-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .contact-card p {
-                font-size: 1rem;
-            }
-
-            .contact-methods {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .contact-btn {
-                padding: 1.25rem 0.75rem;
-            }
-
-            .contact-icon {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .contact-label {
-                font-size: 0.875rem;
-            }
-
-            /* Footer mobile */
-            footer {
-                padding: 2rem 1rem;
-                font-size: 0.875rem;
-            }
-
-            footer a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-
-            /* Profile section mobile */
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .profile-name {
-                font-size: 1.25rem;
-            }
-
-            .profile-title {
-                font-size: 0.875rem;
-            }
-
-            .profile-info {
-                font-size: 0.8rem;
-            }
-
-            /* CV download button mobile */
-            .cv-download-sidebar {
-                font-size: 0.75rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            /* Navigation mobile */
-            .nav-link {
-                padding: 0.875rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .nav-icon {
-                font-size: 0.9rem;
-            }
-
-            /* Social links mobile */
-            .social-links {
-                gap: 0.75rem;
-            }
-
-            .social-link {
-                width: 36px;
-                height: 36px;
-                font-size: 0.9rem;
-            }
-
-            /* Sidebar content mobile */
-            .sidebar-content {
-                padding: 2rem 1.25rem;
-            }
-
-            /* Remove hover effects on mobile */
+            .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; width: 280px; }
+            .sidebar.active { transform: translateX(0); box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5); }
+            .main-content { margin-left: 0; }
+            .mobile-toggle { display: block; }
+            .content-wrapper { padding: 2rem 1rem; }
+            section { margin-bottom: 3rem; }
+            .section-title { font-size: 1.75rem; margin-bottom: 1.5rem; }
+            .subsection-title { font-size: 1.25rem; margin: 2rem 0 1rem; }
+            .about-content { font-size: 1rem; text-align: left; }
+            .education-container { max-height: 60vh; }
+            #education .card-item { padding: 1.25rem; margin-bottom: 1rem; }
+            #presentations .presentation-item { padding: 1rem; font-size: 0.9rem; margin-bottom: 0.75rem; }
+            #presentations .presentation-item:last-child { margin-bottom: 0; }
+            #presentations { max-height: 50vh; overflow-y: auto; padding-right: 0.5rem; }
+            #presentations::-webkit-scrollbar { width: 6px; }
+            #presentations::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 3px; }
+            #presentations::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 3px; }
+            .presentation-link { display: inline-block; margin: 0.25rem 0; font-size: 0.875rem; }
+            .projects-container { max-height: 40vh; padding: 0.75rem; background-color: var(--bg-secondary); border: 1px solid var(--border-color); }
+            .project-item { padding: 1.25rem; margin-bottom: 0.75rem; }
+            .project-item h5 { font-size: 1rem; }
+            .project-details { font-size: 0.85rem; }
+            .skills-container { padding: 1.5rem; }
+            .skills-grid { grid-template-columns: 1fr; gap: 1rem; max-height: 50vh; overflow-y: auto; padding-right: 0.5rem; }
+            .skills-grid::-webkit-scrollbar { width: 6px; }
+            .skills-grid::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 3px; }
+            .skills-grid::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 3px; }
+            .skill-category { padding: 1rem; }
+            .skill-category h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+            .skill-tag { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+            .courses-container { max-height: 40vh; padding: 0.75rem; background-color: var(--bg-secondary); border: 1px solid var(--border-color); }
+            .course-item { padding: 0.75rem; font-size: 0.85rem; flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+            .course-grade { font-size: 0.9rem; }
+            .education-card { flex-direction: column; text-align: center; }
+            .logo-container { width: 60px; height: 60px; margin: 0 auto 1rem; }
+            .list-item { padding: 1rem; font-size: 0.9rem; }
+            .publication-item { padding: 1.25rem; font-size: 0.9rem; }
+            .contact-card { padding: 2rem 1.5rem; }
+            .contact-card p { font-size: 1rem; }
+            /* NEW: better layout for circles on phones */
+            .contact-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+            .contact-btn { width: min(38vw, 130px); }
+            footer { padding: 2rem 1rem; font-size: 0.875rem; }
+            footer a { display: block; margin: 0.5rem 0; }
+            .profile-img { width: 120px; height: 120px; }
+            .profile-name { font-size: 1.25rem; }
+            .profile-title { font-size: 0.875rem; }
+            .profile-info { font-size: 0.8rem; }
+            .cv-download-sidebar { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+            .nav-link { padding: 0.875rem 1rem; font-size: 0.9rem; }
+            .nav-icon { font-size: 0.9rem; }
+            .social-links { gap: 0.75rem; }
+            .social-link { width: 36px; height: 36px; font-size: 0.9rem; }
+            .sidebar-content { padding: 2rem 1.25rem; }
             @media (hover: none) {
-                .card-item:hover,
-                .list-item:hover,
-                .publication-item:hover,
-                .presentation-item:hover,
-                .project-item:hover,
-                .skill-category:hover,
-                .course-item:hover {
-                    transform: none;
-                }
+                .card-item:hover, .list-item:hover, .publication-item:hover, .presentation-item:hover,
+                .project-item:hover, .skill-category:hover, .course-item:hover { transform: none; }
             }
         }
-
-        /* Small mobile devices */
         @media (max-width: 375px) {
-            .content-wrapper {
-                padding: 1.5rem 0.75rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .card-item {
-                padding: 1rem;
-            }
-
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            /* Further reduce scrollable heights on very small screens */
-            #education,
-            #presentations,
-            .skills-grid {
-                max-height: 45vh;
-            }
-
-            .projects-container,
-            .courses-container {
-                max-height: 35vh;
-            }
+            .content-wrapper { padding: 1.5rem 0.75rem; }
+            .section-title { font-size: 1.5rem; }
+            .card-item { padding: 1rem; }
+            .contact-methods { grid-template-columns: 1fr; }
+            .profile-img { width: 100px; height: 100px; }
+            .education-container, #presentations, .skills-grid { max-height: 45vh; }
+            .projects-container, .courses-container { max-height: 35vh; }
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-green-dark); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+
+        /* Loading */
+        .loading {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--bg-primary); display: flex; justify-content: center; align-items: center;
+            z-index: 9999; transition: opacity 0.5s ease;
+        }
+        .loading.hidden { opacity: 0; pointer-events: none; }
+        .loading-spinner { width: 50px; height: 50px; border: 3px solid var(--border-color); border-top-color: var(--accent-green); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+
+        /* Make Presentations scrollable on laptop/desktop too */
+        #presentations {
+            max-height: 30vh;      /* adjust height for your preference */
+            overflow-y: auto;
+            padding-right: 0.5rem; /* prevent scrollbar overlap */
         }
 
-        ::-webkit-scrollbar-track {
+        /* Styled scrollbar for desktop */
+        #presentations::-webkit-scrollbar {
+            width: 8px;
+        }
+        #presentations::-webkit-scrollbar-track {
             background: var(--bg-primary);
+            border-radius: 3px;
         }
-
-        ::-webkit-scrollbar-thumb {
+        #presentations::-webkit-scrollbar-thumb {
             background: var(--accent-green-dark);
-            border-radius: 5px;
+            border-radius: 3px;
         }
-
-        ::-webkit-scrollbar-thumb:hover {
+        #presentations::-webkit-scrollbar-thumb:hover {
             background: var(--accent-green);
         }
 
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
+        #presentations .presentation-item:last-child {
+            margin-bottom: 0;
         }
 
-        .loading.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
 
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--border-color);
-            border-top-color: var(--accent-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+
+
+    
+/* ===== Selected Courses – Modern Card Layout (replaces compact) ===== */
+.courses-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 1.2rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 0.5rem !important;
+}
+
+.course-item {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 1rem 1.2rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+    margin: 0 !important;
+}
+
+.course-item:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08) !important;
+    background-color: var(--bg-hover) !important;
+}
+
+.course-item > span:first-child {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    color: var(--text-primary) !important;
+    line-height: 1.35 !important;
+    flex: 1 1 auto !important;
+}
+
+.course-grade {
+    align-self: flex-start !important;
+    padding: 0.15rem 0.5rem !important;
+    border-radius: 8px !important;
+    background-color: var(--accent-green-dark) !important;
+    color: #0a0a0a !important;
+    font-weight: 700 !important;
+    font-family: 'Fira Code', monospace !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+}
+
+/* Subsection spacing within courses */
+#courses .subsection-title {
+    margin: 1.4rem 0 0.9rem !important;
+}
+
+/* The italic GPA line after undergrad list */
+#courses p[style*="font-style: italic"] {
+    margin-top: 0.8rem !important;
+    font-size: 0.95rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .courses-container {
+        grid-template-columns: 1fr !important;
+        gap: 0.9rem !important;
+    }
+    .course-item {
+        padding: 0.9rem 1rem !important;
+    }
+    .course-item > span:first-child {
+        font-size: 0.95rem !important;
+    }
+    .course-grade {
+        font-size: 0.82rem !important;
+    }
+}
+
+/* ===== Courses: 2-column desktop w/ internal scroll, 1-column mobile w/ internal scroll ===== */
+#courses .courses-container {
+    max-height: 40vh !important;   /* default cap (desktop/tablet) */
+    overflow-y: auto !important;
+    padding-right: 0.5rem !important; /* room for scrollbar */
+}
+
+/* Desktop/Laptop: force two columns */
+@media (min-width: 992px) {
+    #courses .courses-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-height: 40vh !important;
+    }
+}
+
+/* Tablets narrow & Mobile: single column with scroll */
+@media (max-width: 991px) {
+    #courses .courses-container {
+        grid-template-columns: 1fr !important;
+        max-height: 45vh !important; /* a bit taller on mobile for comfort */
+        padding-right: 0.4rem !important;
+    }
+}
+
+/* Scrollbar styling for the two lists */
+#courses .courses-container::-webkit-scrollbar { width: 8px; }
+#courses .courses-container::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-radius: 4px;
+}
+#courses .courses-container::-webkit-scrollbar-thumb {
+    background: var(--accent-green-dark);
+    border-radius: 4px;
+}
+#courses .courses-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+}
+</style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -1241,107 +577,37 @@
 
             <nav>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link active">
-                            <i class="fas fa-user nav-icon"></i>
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#education" class="nav-link">
-                            <i class="fas fa-graduation-cap nav-icon"></i>
-                            Education
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#research" class="nav-link">
-                            <i class="fas fa-microscope nav-icon"></i>
-                            Research
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#publications" class="nav-link">
-                            <i class="fas fa-book nav-icon"></i>
-                            Publications
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#presentations" class="nav-link">
-                            <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                            Presentations
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#teaching" class="nav-link">
-                            <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                            Teaching
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#honors" class="nav-link">
-                            <i class="fas fa-award nav-icon"></i>
-                            Honors
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">
-                            <i class="fas fa-project-diagram nav-icon"></i>
-                            Projects
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">
-                            <i class="fas fa-code nav-icon"></i>
-                            Skills
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#courses" class="nav-link">
-                            <i class="fas fa-book-open nav-icon"></i>
-                            Courses
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <i class="fas fa-envelope nav-icon"></i>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#references" class="nav-link">
-                            <i class="fas fa-users nav-icon"></i>
-                            References
-                        </a>
-                    </li>
+                    <li class="nav-item"><a href="#about" class="nav-link active"><i class="fas fa-user nav-icon"></i>About</a></li>
+                    <li class="nav-item"><a href="#education" class="nav-link"><i class="fas fa-graduation-cap nav-icon"></i>Education</a></li>
+                    <li class="nav-item"><a href="#research" class="nav-link"><i class="fas fa-microscope nav-icon"></i>Research</a></li>
+                    <li class="nav-item"><a href="#publications" class="nav-link"><i class="fas fa-book nav-icon"></i>Publications</a></li>
+                    <li class="nav-item"><a href="#presentations" class="nav-link"><i class="fas fa-chalkboard-teacher nav-icon"></i>Presentations</a></li>
+                    <li class="nav-item"><a href="#teaching" class="nav-link"><i class="fas fa-chalkboard-teacher nav-icon"></i>Teaching</a></li>
+                    <li class="nav-item"><a href="#honors" class="nav-link"><i class="fas fa-award nav-icon"></i>Honors</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link"><i class="fas fa-project-diagram nav-icon"></i>Projects</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link"><i class="fas fa-code nav-icon"></i>Skills</a></li>
+                    <li class="nav-item"><a href="#courses" class="nav-link"><i class="fas fa-book-open nav-icon"></i>Courses</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-envelope nav-icon"></i>Contact</a></li>
+                    <li class="nav-item"><a href="#references" class="nav-link"><i class="fas fa-users nav-icon"></i>References</a></li>
                 </ul>
             </nav>
 
             <div class="social-links">
-                <a href="https://github.com/benyamin-kh" target="_blank" class="social-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/beyamin-khezeli" target="_blank" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=PVClYzsAAAAJ&hl=en" target="_blank" class="social-link" title="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="https://t.me/IamBK79" target="_blank" class="social-link" title="Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
+                <a href="https://github.com/benyamin-kh" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/beyamin-khezeli" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=PVClYzsAAAAJ&hl=en" target="_blank" class="social-link" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://t.me/IamBK79" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="mobile-toggle" id="mobile-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="content-wrapper">
-            <!-- About Section -->
+            <!-- About -->
             <section id="about">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
@@ -1354,115 +620,90 @@
                 </div>
             </section>
 
-            <!-- Education Section -->
+            <!-- Education -->
             <section id="education">
                 <h2 class="section-title">Education</h2>
-                
-                <div class="card-item">
-                    <div class="education-card">
-                        <div class="logo-container">
-                            <img src="logos/sharif_logo.png" alt="Sharif University Logo" class="university-logo">
-                        </div>
-                        <div>
-                            <h3 class="card-title"><a href="https://en.sharif.ir/" target="_blank" rel="noopener noreferrer">Sharif University of Technology</a></h3>
-                            <p class="card-subtitle">Doctor of Philosophy - PhD, Computer Engineering</p>
-                            <div class="card-details">
-                                <p>2024 - 2029</p>
-                                <p>GPA: 18.7/20 (4/4)</p>
-                                <p><strong>Skills:</strong> Firmware Engineering · Embedded and Real-time Systems · Storage Systems · Cyber-physical Systems · Edge Computing · Statistical Modeling.</p>
+                <div class="education-container">
+                    <div class="card-item">
+                        <div class="education-card">
+                            <div class="logo-container"><img src="logos/sharif_logo.png" alt="Sharif University Logo" class="university-logo"></div>
+                            <div>
+                                <h3 class="card-title"><a href="https://en.sharif.ir/" target="_blank" rel="noopener noreferrer">Sharif University of Technology</a></h3>
+                                <p class="card-subtitle">Doctor of Philosophy - PhD, Computer Engineering</p>
+                                <div class="card-details">
+                                    <p>2024 - 2029</p>
+                                    <p>GPA: 18.7/20 (4/4)</p>
+                                    <p><strong>Skills:</strong> Firmware Engineering · Embedded and Real-time Systems · Storage Systems · Cyber-physical Systems · Edge Computing · Statistical Modeling.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card-item">
-                    <div class="education-card">
-                        <div class="logo-container">
-                            <img src="logos/amirkabir_logo.png" alt="Amirkabir University Logo" class="university-logo">
-                        </div>
-                        <div>
-                            <h3 class="card-title"><a href="https://aut.ac.ir/en" target="_blank" rel="noopener noreferrer">Amirkabir University of Technology - Tehran Polytechnic</a></h3>
-                            <p class="card-subtitle">Master of Science - MS, Computer Engineering</p>
-                            <div class="card-details">
-                                <p>2022 - 2024</p>
-                                <p>GPA: 19.06/20 (4/4)</p>
-                                <p><strong>Courses:</strong> Advanced Computer Architecture · Testing and Testable System Design · Low-Power Digital Systems Design · Memory Technologies · System on a Chip · Advanced Database · Dependable Systems Design · Machine Learning · Reconfigurable Systems</p>
-                                <p><strong>Skills:</strong> System on a Chip (SoC) · SystemC · Circuit Testing · Artificial Neural Networks · Machine Learning · Fault-Tolerant Systems · Reconfigurable Computing · Linux · Xilinx Vivado · Verilog · Gem5 simulator · Processing-in-memory (PIM) · HSPICE.</p>
+                    <div class="card-item">
+                        <div class="education-card">
+                            <div class="logo-container"><img src="logos/amirkabir_logo.png" alt="Amirkabir University Logo" class="university-logo"></div>
+                            <div>
+                                <h3 class="card-title"><a href="https://aut.ac.ir/en" target="_blank" rel="noopener noreferrer">Amirkabir University of Technology - Tehran Polytechnic</a></h3>
+                                <p class="card-subtitle">Master of Science - MS, Computer Engineering</p>
+                                <div class="card-details">
+                                    <p>2022 - 2024</p>
+                                    <p>GPA: 19.06/20 (4/4)</p>
+                                    <p><strong>Skills:</strong> System on a Chip (SoC) · SystemC · Circuit Testing · Artificial Neural Networks · Machine Learning · Fault-Tolerant Systems · Reconfigurable Computing · Linux · Xilinx Vivado · Verilog · Gem5 simulator · Processing-in-memory (PIM) · HSPICE.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card-item">
-                    <div class="education-card">
-                        <div class="logo-container">
-                            <img src="logos/guilan_logo.png" alt="Guilan University Logo" class="university-logo">
-                        </div>
-                        <div>
-                            <h3 class="card-title"><a href="https://english.guilan.ac.ir/" target="_blank" rel="noopener noreferrer">Guilan University</a></h3>
-                            <p class="card-subtitle">Bachelor of Science - BS, Computer Engineering</p>
-                            <div class="card-details">
-                                <p>Sep 2018 - Sep 2022</p>
-                                <p>GPA: 18.60/20 (3.87/4)</p>
-                                <p><strong>GPA for last two years:</strong> 19.10/20 (3.98/4)</p>
-                                <p><strong>Skills:</strong> VHDL · Computer Architecture · Computer-Aided Design (CAD) · Xilinx ISE · Java · Data Structures · Linux · Python (Programming Language) · C++ · Embedded Systems · Computer Hardware · Operating Systems.</p>
+                    <div class="card-item">
+                        <div class="education-card">
+                            <div class="logo-container"><img src="logos/guilan_logo.png" alt="Guilan University Logo" class="university-logo"></div>
+                            <div>
+                                <h3 class="card-title"><a href="https://english.guilan.ac.ir/" target="_blank" rel="noopener noreferrer">Guilan University</a></h3>
+                                <p class="card-subtitle">Bachelor of Science - BS, Computer Engineering</p>
+                                <div class="card-details">
+                                    <p>Sep 2018 - Sep 2022</p>
+                                    <p>GPA: 18.60/20 (3.87/4)</p>
+                                    <p><strong>GPA for last two years:</strong> 19.10/20 (3.98/4)</p>
+                                    <p><strong>Skills:</strong> VHDL · Computer Architecture · Computer-Aided Design (CAD) · Xilinx ISE · Java · Data Structures · Linux · Python (Programming Language) · C++ · Embedded Systems · Computer Hardware · Operating Systems.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card-item">
-                    <div class="education-card">
-                        <div class="logo-container">
-                            <img src="logos/sampad_logo.png" alt="Sampad Logo" class="university-logo">
-                        </div>
-                        <div>
-                            <h3 class="card-title">National Organization for Development of Exceptional Talents (Sampad)</h3>
-                            <p class="card-subtitle">High School Diploma, Mathematics and Physics</p>
-                            <div class="card-details">
-                                <p>2014 - 2018</p>
-                                <p>GPA: 19.60/20</p>
+                    <div class="card-item">
+                        <div class="education-card">
+                            <div class="logo-container"><img src="logos/sampad_logo.png" alt="Sampad Logo" class="university-logo"></div>
+                            <div>
+                                <h3 class="card-title">National Organization for Development of Exceptional Talents (Sampad)</h3>
+                                <p class="card-subtitle">High School Diploma, Mathematics and Physics</p>
+                                <div class="card-details"><p>2014 - 2018</p><p>GPA: 19.60/20</p></div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card-item">
-                    <div class="education-card">
-                        <div class="logo-container">
-                            <img src="logos/sampad_logo.png" alt="Sampad Logo" class="university-logo">
-                        </div>
-                        <div>
-                            <h3 class="card-title">National Organization for Development of Exceptional Talents (Sampad)</h3>
-                            <p class="card-subtitle">Junior High School</p>
-                            <div class="card-details">
-                                <p>2012 - 2014</p>
-                                <p>GPA: 20/20</p>
+                    <div class="card-item">
+                        <div class="education-card">
+                            <div class="logo-container"><img src="logos/sampad_logo.png" alt="Sampad Logo" class="university-logo"></div>
+                            <div>
+                                <h3 class="card-title">National Organization for Development of Exceptional Talents (Sampad)</h3>
+                                <p class="card-subtitle">Junior High School</p>
+                                <div class="card-details"><p>2012 - 2014</p><p>GPA: 20/20</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Research Section -->
+            <!-- Research -->
             <section id="research">
                 <h2 class="section-title">Research Experience</h2>
-                
-                <div class="list-item">
-                    <p><strong>ESRLab, Sharif University of Technology (SUT)</strong> - (ongoing)</p>
-                    <p>Reliability assessment and thermal management in GPUs.</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>DADS Lab, Amirkabir University of Technology (AUT)</strong> - (2022-2024)</p>
-                    <p>Proposing a Soft Error Tolerant Method for Crossbar-based Processing-in-ReRAM Architecture.</p>
-                </div>
+                <div class="list-item"><p><strong>ESRLab, Sharif University of Technology (SUT)</strong> - (ongoing)</p><p>Reliability assessment and thermal management in GPUs.</p></div>
+                <div class="list-item"><p><strong>DADS Lab, Amirkabir University of Technology (AUT)</strong> - (2022-2024)</p><p>Proposing a Soft Error Tolerant Method for Crossbar-based Processing-in-ReRAM Architecture.</p></div>
             </section>
 
-            <!-- Publications Section -->
+            <!-- Publications -->
             <section id="publications">
                 <h2 class="section-title">Publications</h2>
-                
                 <div class="publication-item">
                     <p><strong>Online Soft Error Tolerance in ReRAM Crossbars for Deep Learning Accelerators</strong></p>
                     <p>Benyamin Khezeli, Hamid Reza Zarandi, Elham Cheshmikhani.</p>
@@ -1470,26 +711,13 @@
                 </div>
             </section>
 
-            <!-- Presentations Section -->
+            <!-- Presentations -->
             <section id="presentations">
                 <h2 class="section-title">Presentations</h2>
-                
-                <div class="presentation-item">
-                    <p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="presentation-link">View Presentation <i class="fas fa-external-link-alt fa-xs"></i></a></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p>
-                </div>
-
-                <div class="presentation-item">
-                    <p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p>
-                </div>
-
+                <div class="presentation-item"><p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                <div class="presentation-item"><p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="presentation-link">View Presentation <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                <div class="presentation-item"><p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                <div class="presentation-item"><p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
                 <div class="presentation-item">
                     <p><strong>Memory Technologies Slides:</strong>
                         <a href="https://drive.google.com/file/d/1Q8vM7J04LjwtUD-z800ZW3gQ_uHhS6rz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">1 <i class="fas fa-external-link-alt fa-xs"></i></a>
@@ -1499,254 +727,90 @@
                 </div>
             </section>
 
-            <!-- Teaching Section -->
+            <!-- Teaching -->
             <section id="teaching">
                 <h2 class="section-title">Teaching Experience</h2>
-                
-                <div class="list-item">
-                    <p><strong>Operating Systems Laboratory Instructor</strong> (Amirkabir University of Technology, Oct 2023 - Feb 2024)</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>Computer Architecture Laboratory Instructor</strong> (Amirkabir University of Technology, Feb 2023 - Jun 2023, Oct 2023 - Feb 2024)</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>Digital Systems Design Laboratory Instructor</strong> (Sharif University of Technology, Sep 2024 - Jan 2025)</p>
-                </div>
+                <div class="list-item"><p><strong>Operating Systems Laboratory Instructor</strong> (Amirkabir University of Technology, Oct 2023 - Feb 2024)</p></div>
+                <div class="list-item"><p><strong>Computer Architecture Laboratory Instructor</strong> (Amirkabir University of Technology, Feb 2023 - Jun 2023, Oct 2023 - Feb 2024)</p></div>
+                <div class="list-item"><p><strong>Digital Systems Design Laboratory Instructor</strong> (Sharif University of Technology, Sep 2024 - Jan 2025)</p></div>
             </section>
 
-            <!-- Honors Section -->
+            <!-- Honors -->
             <section id="honors">
                 <h2 class="section-title">Honors & Awards</h2>
-                
-                <div class="list-item">
-                    <p>Accepted as a special talent for the Master's program in the field of Computer Architecture from Amirkabir University of Technology (AUT), Iran University of Science and Technology (IUST), Shahid Beheshti University, K. N. Toosi University of Technology, and Guilan University.</p>
-                </div>
-
-                <div class="list-item">
-                    <p>Accepted as a special talent for the PhD program in the field of Computer Architecture from Sharif University of Technology (SUT) and Amirkabir University of Technology (AUT).</p>
-                </div>
-
-                <div class="list-item">
-                    <p>Accepted as a special talent for the PhD program in the field of AI from Amirkabir University of Technology (AUT).</p>
-                </div>
+                <div class="list-item"><p>Accepted as a special talent for the Master's program in the field of Computer Architecture from Amirkabir University of Technology (AUT), Iran University of Science and Technology (IUST), Shahid Beheshti University, K. N. Toosi University of Technology, and Guilan University.</p></div>
+                <div class="list-item"><p>Accepted as a special talent for the PhD program in the field of Computer Architecture from Sharif University of Technology (SUT) and Amirkabir University of Technology (AUT).</p></div>
+                <div class="list-item"><p>Accepted as a special talent for the PhD program in the field of AI from Amirkabir University of Technology (AUT).</p></div>
             </section>
 
-            <!-- Projects Section -->
+            <!-- Projects -->
             <section id="projects">
                 <h2 class="section-title">Selected Projects</h2>
-                
                 <h3 class="subsection-title">Undergraduate Projects</h3>
                 <div class="projects-container">
-                    <div class="project-item">
-                        <h5>Digital Electronics Project</h5>
-                        <p>Implementation of logic gates and sequential elements with SPICE code and simulation in HSPICE. Measured parameters such as power consumption, T<sub>r</sub>, T<sub>LH</sub>, T<sub>HL</sub>, T<sub>f</sub>, and circuit propagation delay.</p>
-                        <p class="project-details"><strong>Course:</strong> Digital Electronics | <strong>Instructor:</strong> Dr. Mahdi Aminian</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Embedded Systems Project</h5>
-                        <p>Design of an HVAC system and simulation in Proteus software and Arduino AVR series board with C language.</p>
-                        <p class="project-details"><strong>Course:</strong> Embedded and Real-time Systems | <strong>Instructor:</strong> Dr. Mohammad Salehi</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Hardware-Software Co-design Project</h5>
-                        <p>Design and implementation of a 6-bit processor including JNZ, LOAD, ADD, SUB instructions using VHDL. Converted assembly code to binary and stored it in memory for execution.</p>
-                        <p class="project-details"><strong>Languages:</strong> VHDL, Python | <strong>Course:</strong> Hardware-Software Co-design | <strong>Instructor:</strong> Dr. Mohammad Salehi</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Computer Architecture Project</h5>
-                        <p>Implementation of a MIPS-based computer with VHDL hardware description language.</p>
-                        <p class="project-details"><strong>Course:</strong> Computer Architecture | <strong>Instructor:</strong> Dr. Pedram Ahmadifar</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Digital Systems Design Project</h5>
-                        <p>Implementation of the River Raid game.</p>
-                        <p class="project-details"><strong>Language & Tools:</strong> VHDL, Xilinx ISE, Spartan6 board | <strong>Course:</strong> Digital Systems Design | <strong>Instructor:</strong> Dr. Mahdi Aminian</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Microprocessor and Assembly Project</h5>
-                        <p>Connected a 4x4 keypad to an ATmega32 microcontroller for various 7-segment LED movements. Designed and implemented a calculator performing basic operations, displaying results up to two decimal places.</p>
-                        <p class="project-details"><strong>Language:</strong> Assembly | <strong>Course:</strong> Microprocessor and Assembly Language | <strong>Instructor:</strong> Dr. Pedram Ahmadifar</p>
-                    </div>
+                    <div class="project-item"><h5>Digital Electronics Project</h5><p>Implementation of logic gates and sequential elements with SPICE code and simulation in HSPICE. Measured parameters such as power consumption, T<sub>r</sub>, T<sub>LH</sub>, T<sub>HL</sub>, T<sub>f</sub>, and circuit propagation delay.</p><p class="project-details"><strong>Course:</strong> Digital Electronics | <strong>Instructor:</strong> Dr. Mahdi Aminian</p></div>
+                    <div class="project-item"><h5>Embedded Systems Project</h5><p>Design of an HVAC system and simulation in Proteus software and Arduino AVR series board with C language.</p><p class="project-details"><strong>Course:</strong> Embedded and Real-time Systems | <strong>Instructor:</strong> Dr. Mohammad Salehi</p></div>
+                    <div class="project-item"><h5>Hardware-Software Co-design Project</h5><p>Design and implementation of a 6-bit processor including JNZ, LOAD, ADD, SUB instructions using VHDL. Converted assembly code to binary and stored it in memory for execution.</p><p class="project-details"><strong>Languages:</strong> VHDL, Python | <strong>Course:</strong> Hardware-Software Co-design | <strong>Instructor:</strong> Dr. Mohammad Salehi</p></div>
+                    <div class="project-item"><h5>Computer Architecture Project</h5><p>Implementation of a MIPS-based computer with VHDL hardware description language.</p><p class="project-details"><strong>Course:</strong> Computer Architecture | <strong>Instructor:</strong> Dr. Pedram Ahmadifar</p></div>
+                    <div class="project-item"><h5>Digital Systems Design Project</h5><p>Implementation of the River Raid game.</p><p class="project-details"><strong>Language & Tools:</strong> VHDL, Xilinx ISE, Spartan6 board | <strong>Course:</strong> Digital Systems Design | <strong>Instructor:</strong> Dr. Mahdi Aminian</p></div>
+                    <div class="project-item"><h5>Microprocessor and Assembly Project</h5><p>Connected a 4x4 keypad to an ATmega32 microcontroller for various 7-segment LED movements. Designed and implemented a calculator performing basic operations, displaying results up to two decimal places.</p><p class="project-details"><strong>Language:</strong> Assembly | <strong>Course:</strong> Microprocessor and Assembly Language | <strong>Instructor:</strong> Dr. Pedram Ahmadifar</p></div>
                 </div>
 
                 <h3 class="subsection-title">Graduate Projects</h3>
                 <div class="projects-container">
-                    <div class="project-item">
-                        <h5>Dependable Systems Design Project</h5>
-                        <p>Fault injection and behavioral simulation of faults on benchmark codes in VHDL based on Armstrong's paper.</p>
-                        <p>Compared different checksums on raw data blocks from a hard disk using Python.</p>
-                        <p class="project-details"><strong>Course:</strong> Dependable Systems Design | <strong>Instructor:</strong> Dr. Hamid Reza Zarandi</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Low-Power Digital Systems Design Project</h5>
-                        <p>Implementation of Gray Encoding, Bus Inverting, and Partitioned Bus Inverting methods to reduce transitions on a 32-bit bus and their analysis using Python.</p>
-                        <p>Implementation of various power reduction techniques at different levels using HSPICE simulator. Implemented different low-power designs in flip-flops mentioned in an article using HSPICE.</p>
-                        <p class="project-details"><strong>Course:</strong> Low-Power Digital Systems Design | <strong>Instructor:</strong> Dr. Mahmoud Momtazpour</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Testing and Testable System Design Project</h5>
-                        <p>Implementation of an Event-Driven simulator along with Unit Delay and MINMAX Delay simulation at the gate level using Python.</p>
-                        <p class="project-details"><strong>Course:</strong> Testing and Testable System Design | <strong>Instructor:</strong> Dr. Hamid Reza Zarandi</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Reconfigurable Systems Project</h5>
-                        <p>Hardware-software co-design for trigonometric functions on FPGA using memory blocks. Implemented a fully connected neural network for MNIST image classification on FPGA.</p>
-                        <p class="project-details"><strong>Course:</strong> Reconfigurable Systems | <strong>Instructor:</strong> Dr. Morteza Saheb Zamani</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>SoC Project</h5>
-                        <p>Modeling and simulation of hypothetical neuron behavior using SystemC. Image recognition with Chipyard.</p>
-                        <p class="project-details"><strong>Course:</strong> Systems on a Chip | <strong>Instructor:</strong> Dr. Elham Cheshmikhani</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Advanced Computer Architecture Project</h5>
-                        <p>Simulation of computer system architecture using gem5 simulator. Built gem5 on different architectures, configured and optimized cache memory structure on x86, and calculated CPI on Parsec benchmark.</p>
-                        <p class="project-details"><strong>Course:</strong> Advanced Computer Architecture | <strong>Instructor:</strong> Dr. Hamed Farbeh</p>
-                    </div>
-
-                    <div class="project-item">
-                        <h5>Advanced VLSI Project</h5>
-                        <p>Behavioral level design of a Register File (128x32 bit) with decoder and multiplexer circuits in ModelSim (VHDL). Verified design functionality at transistor level with HSPICE (6-transistor SRAM implementation).</p>
-                        <p class="project-details"><strong>Course:</strong> Advanced VLSI | <strong>Instructor:</strong> Dr. Mehdi Sedighi</p>
-                    </div>
+                    <div class="project-item"><h5>Dependable Systems Design Project</h5><p>Fault injection and behavioral simulation of faults on benchmark codes in VHDL based on Armstrong's paper.</p><p>Compared different checksums on raw data blocks from a hard disk using Python.</p><p class="project-details"><strong>Course:</strong> Dependable Systems Design | <strong>Instructor:</strong> Dr. Hamid Reza Zarandi</p></div>
+                    <div class="project-item"><h5>Low-Power Digital Systems Design Project</h5><p>Implementation of Gray Encoding, Bus Inverting, and Partitioned Bus Inverting methods to reduce transitions on a 32-bit bus and their analysis using Python.</p><p>Implementation of various power reduction techniques at different levels using HSPICE simulator. Implemented different low-power designs in flip-flops mentioned in an article using HSPICE.</p><p class="project-details"><strong>Course:</strong> Low-Power Digital Systems Design | <strong>Instructor:</strong> Dr. Mahmoud Momtazpour</p></div>
+                    <div class="project-item"><h5>Testing and Testable System Design Project</h5><p>Implementation of an Event-Driven simulator along with Unit Delay and MINMAX Delay simulation at the gate level using Python.</p><p class="project-details"><strong>Course:</strong> Testing and Testable System Design | <strong>Instructor:</strong> Dr. Hamid Reza Zarandi</p></div>
+                    <div class="project-item"><h5>Reconfigurable Systems Project</h5><p>Hardware-software co-design for trigonometric functions on FPGA using memory blocks. Implemented a fully connected neural network for MNIST image classification on FPGA.</p><p class="project-details"><strong>Course:</strong> Reconfigurable Systems | <strong>Instructor:</strong> Dr. Morteza Saheb Zamani</p></div>
+                    <div class="project-item"><h5>SoC Project</h5><p>Modeling and simulation of hypothetical neuron behavior using SystemC. Image recognition with Chipyard.</p><p class="project-details"><strong>Course:</strong> Systems on a Chip | <strong>Instructor:</strong> Dr. Elham Cheshmikhani</p></div>
+                    <div class="project-item"><h5>Advanced Computer Architecture Project</h5><p>Simulation of computer system architecture using gem5 simulator. Built gem5 on different architectures, configured and optimized cache memory structure on x86, and calculated CPI on Parsec benchmark.</p><p class="project-details"><strong>Course:</strong> Advanced Computer Architecture | <strong>Instructor:</strong> Dr. Hamed Farbeh</p></div>
+                    <div class="project-item"><h5>Advanced VLSI Project</h5><p>Behavioral level design of a Register File (128x32 bit) with decoder and multiplexer circuits in ModelSim (VHDL). Verified design functionality at transistor level with HSPICE (6-transistor SRAM implementation).</p><p class="project-details"><strong>Course:</strong> Advanced VLSI | <strong>Instructor:</strong> Dr. Mehdi Sedighi</p></div>
                 </div>
             </section>
 
-            <!-- Skills Section -->
+            <!-- Skills -->
             <section id="skills">
                 <h2 class="section-title">Technical Skills</h2>
-                
                 <div class="skills-container">
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h4><i class="fas fa-code"></i>Programming Languages</h4>
                             <div class="skill-items">
-                                <span class="skill-tag">C</span>
-                                <span class="skill-tag">Java</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">VHDL</span>
-                                <span class="skill-tag">Assembly</span>
-                                <span class="skill-tag">SystemC</span>
+                                <span class="skill-tag">C</span><span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">VHDL</span><span class="skill-tag">Assembly</span><span class="skill-tag">SystemC</span>
                             </div>
                         </div>
-
                         <div class="skill-category">
                             <h4><i class="fas fa-tools"></i>Tools & Simulators</h4>
                             <div class="skill-items">
-                                <span class="skill-tag">HSPICE</span>
-                                <span class="skill-tag">Xilinx Vivado</span>
-                                <span class="skill-tag">Active HDL</span>
-                                <span class="skill-tag">gem5</span>
-                                <span class="skill-tag">Jupyter Notebook</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Proteus</span>
-                                <span class="skill-tag">Visual Studio</span>
-                                <span class="skill-tag">ModelSim</span>
+                                <span class="skill-tag">HSPICE</span><span class="skill-tag">Xilinx Vivado</span><span class="skill-tag">Active HDL</span><span class="skill-tag">gem5</span><span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Git</span><span class="skill-tag">Proteus</span><span class="skill-tag">Visual Studio</span><span class="skill-tag">ModelSim</span>
                             </div>
                         </div>
-
-                        <div class="skill-category">
-                            <h4><i class="fas fa-brain"></i>Deep Learning</h4>
-                            <div class="skill-items">
-                                <span class="skill-tag">Keras</span>
-                                <span class="skill-tag">PyTorch</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4><i class="fas fa-desktop"></i>Operating Systems</h4>
-                            <div class="skill-items">
-                                <span class="skill-tag">Windows</span>
-                                <span class="skill-tag">macOS</span>
-                                <span class="skill-tag">Ubuntu (Linux)</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4><i class="fas fa-language"></i>Languages</h4>
-                            <div class="skill-items">
-                                <span class="skill-tag">Persian (Native)</span>
-                                <span class="skill-tag">English (Upper-Intermediate)</span>
-                            </div>
-                        </div>
+                        <div class="skill-category"><h4><i class="fas fa-brain"></i>Deep Learning</h4><div class="skill-items"><span class="skill-tag">Keras</span><span class="skill-tag">PyTorch</span></div></div>
+                        <div class="skill-category"><h4><i class="fas fa-desktop"></i>Operating Systems</h4><div class="skill-items"><span class="skill-tag">Windows</span><span class="skill-tag">macOS</span><span class="skill-tag">Ubuntu (Linux)</span></div></div>
+                        <div class="skill-category"><h4><i class="fas fa-language"></i>Languages</h4><div class="skill-items"><span class="skill-tag">Persian (Native)</span><span class="skill-tag">English (Upper-Intermediate)</span></div></div>
                     </div>
                 </div>
             </section>
 
-            <!-- Courses Section -->
+            <!-- Courses -->
             <section id="courses">
                 <h2 class="section-title">Selected Courses</h2>
-                
                 <h3 class="subsection-title">Selected Undergraduate Courses</h3>
                 <div class="courses-container">
-                    <div class="course-item">
-                        <span>Computer Fundamentals and Programming</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Logic Circuits</span>
-                        <span class="course-grade">17/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Computer Architecture</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Operating Systems</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Microprocessors and Assembly Language</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Digital Electronics</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Digital Systems Design</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Electrical Circuits</span>
-                        <span class="course-grade">18.5/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Embedded and Real-time Systems</span>
-                        <span class="course-grade">19.82/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Hardware-Software Co-design</span>
-                        <span class="course-grade">18.75/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Microprocessor Lab</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Operating Systems Lab</span>
-                        <span class="course-grade">19/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Electrical Circuits Lab</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Logic Circuits and Architecture Lab</span>
-                        <span class="course-grade">18.80/20</span>
-                    </div>
+                    <div class="course-item"><span>Computer Fundamentals and Programming</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Logic Circuits</span><span class="course-grade">17/20</span></div>
+                    <div class="course-item"><span>Computer Architecture</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Operating Systems</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Microprocessors and Assembly Language</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Digital Electronics</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Digital Systems Design</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Electrical Circuits</span><span class="course-grade">18.5/20</span></div>
+                    <div class="course-item"><span>Embedded and Real-time Systems</span><span class="course-grade">19.82/20</span></div>
+                    <div class="course-item"><span>Hardware-Software Co-design</span><span class="course-grade">18.75/20</span></div>
+                    <div class="course-item"><span>Microprocessor Lab</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Operating Systems Lab</span><span class="course-grade">19/20</span></div>
+                    <div class="course-item"><span>Electrical Circuits Lab</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Logic Circuits and Architecture Lab</span><span class="course-grade">18.80/20</span></div>
                 </div>
                 <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-style: italic;">
                     Overall GPA for selected undergraduate courses (34 units): 19.41/20 (4/4)
@@ -1754,72 +818,37 @@
 
                 <h3 class="subsection-title">Selected Graduate Courses</h3>
                 <div class="courses-container">
-                    <div class="course-item">
-                        <span>Advanced Computer Architecture</span>
-                        <span class="course-grade">17.26/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Test and Design of Testable Systems</span>
-                        <span class="course-grade">16.63/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Low-Power Digital Systems Design</span>
-                        <span class="course-grade">19/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Memory Technologies</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Systems on a Chip</span>
-                        <span class="course-grade">19.57/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Reconfigurable Systems</span>
-                        <span class="course-grade">19.4/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Dependable Systems Design</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Cyber-Physical Systems</span>
-                        <span class="course-grade">19.1/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Advanced Storage Systems</span>
-                        <span class="course-grade">18.3/20</span>
-                    </div>
-                    <div class="course-item">
-                        <span>Seminar</span>
-                        <span class="course-grade">20/20</span>
-                    </div>
+                    <div class="course-item"><span>Advanced Computer Architecture</span><span class="course-grade">17.26/20</span></div>
+                    <div class="course-item"><span>Test and Design of Testable Systems</span><span class="course-grade">16.63/20</span></div>
+                    <div class="course-item"><span>Low-Power Digital Systems Design</span><span class="course-grade">19/20</span></div>
+                    <div class="course-item"><span>Memory Technologies</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Systems on a Chip</span><span class="course-grade">19.57/20</span></div>
+                    <div class="course-item"><span>Reconfigurable Systems</span><span class="course-grade">19.4/20</span></div>
+                    <div class="course-item"><span>Dependable Systems Design</span><span class="course-grade">20/20</span></div>
+                    <div class="course-item"><span>Cyber-Physical Systems</span><span class="course-grade">19.1/20</span></div>
+                    <div class="course-item"><span>Advanced Storage Systems</span><span class="course-grade">18.3/20</span></div>
+                    <div class="course-item"><span>Seminar</span><span class="course-grade">20/20</span></div>
                 </div>
             </section>
 
-            <!-- Contact Section -->
+            <!-- Contact -->
             <section id="contact">
                 <h2 class="section-title">Get in Touch</h2>
-                
                 <div class="contact-card">
                     <p style="font-size: 1.2rem; margin-bottom: 2rem;">Feel free to reach out if you have any questions or collaboration opportunities!</p>
-                    
                     <div class="contact-methods">
                         <a href="mailto:benyamin.khezeli@ce.sharif.edu" class="contact-btn">
                             <i class="fas fa-envelope contact-icon"></i>
                             <span class="contact-label">Email</span>
                         </a>
-                        
                         <a href="https://linkedin.com/in/beyamin-khezeli" target="_blank" class="contact-btn">
                             <i class="fab fa-linkedin contact-icon"></i>
                             <span class="contact-label">LinkedIn</span>
                         </a>
-                        
                         <a href="https://t.me/IamBK79" target="_blank" class="contact-btn">
                             <i class="fab fa-telegram contact-icon"></i>
                             <span class="contact-label">Telegram</span>
                         </a>
-                        
                         <a href="tel:+989100790098" class="contact-btn">
                             <i class="fas fa-phone contact-icon"></i>
                             <span class="contact-label">Phone</span>
@@ -1828,25 +857,13 @@
                 </div>
             </section>
 
-            <!-- References Section -->
+            <!-- References -->
             <section id="references">
                 <h2 class="section-title">References</h2>
-                
-                <div class="list-item">
-                    <p><strong>Dr. Alireza Ejlali</strong> - Associate Professor at Sharif University of Technology (SUT)</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>Dr. Hamid Reza Zarandi</strong> - Associate Professor at Amirkabir University of Technology (AUT)</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>Dr. Morteza Saheb Zamani</strong> - Professor at Amirkabir University of Technology (AUT)</p>
-                </div>
-
-                <div class="list-item">
-                    <p><strong>Dr. Mahdi Aminian</strong> - Assistant Professor at Guilan University</p>
-                </div>
+                <div class="list-item"><p><strong>Dr. Alireza Ejlali</strong> - Associate Professor at Sharif University of Technology (SUT)</p></div>
+                <div class="list-item"><p><strong>Dr. Hamid Reza Zarandi</strong> - Associate Professor at Amirkabir University of Technology (AUT)</p></div>
+                <div class="list-item"><p><strong>Dr. Morteza Saheb Zamani</strong> - Professor at Amirkabir University of Technology (AUT)</p></div>
+                <div class="list-item"><p><strong>Dr. Mahdi Aminian</strong> - Assistant Professor at Guilan University</p></div>
             </section>
 
             <!-- Footer -->
@@ -1864,9 +881,7 @@
     <script>
         // Loading screen
         window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loading').classList.add('hidden');
-            }, 500);
+            setTimeout(() => { document.getElementById('loading').classList.add('hidden'); }, 500);
         });
 
         // Mobile menu toggle
@@ -1874,16 +889,12 @@
         const sidebar = document.getElementById('sidebar');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        mobileToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('active');
-        });
+        mobileToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
 
         // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if (window.innerWidth <= 767) {
-                    sidebar.classList.remove('active');
-                }
+                if (window.innerWidth <= 767) sidebar.classList.remove('active');
             });
         });
 
@@ -1892,7 +903,6 @@
             if (window.innerWidth <= 767) {
                 const isClickInsideSidebar = sidebar.contains(event.target);
                 const isClickOnToggle = mobileToggle.contains(event.target);
-                
                 if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('active')) {
                     sidebar.classList.remove('active');
                 }
@@ -1901,26 +911,20 @@
 
         // Active navigation highlight
         const sections = document.querySelectorAll('section');
-
         function updateActiveNav() {
             const scrollPosition = window.scrollY + 100;
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
                 const sectionId = section.getAttribute('id');
-
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
+                        if (link.getAttribute('href') === `#${sectionId}`) link.classList.add('active');
                     });
                 }
             });
         }
-
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('load', updateActiveNav);
 
@@ -1930,23 +934,15 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
                 if (targetSection) {
                     const offsetTop = targetSection.offsetTop - 20;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
             });
         });
 
         // Animate sections on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1955,11 +951,9 @@
                 }
             });
         }, observerOptions);
-
-        sections.forEach(section => {
-            section.style.animationPlayState = 'paused';
-            observer.observe(section);
-        });
+        sections.forEach(section => { section.style.animationPlayState = 'paused'; observer.observe(section); });
     </script>
 </body>
 </html>
+```
+

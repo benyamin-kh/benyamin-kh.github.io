@@ -1452,7 +1452,7 @@
         }
 
         @media (max-width: 575px) {
-            .content-wrapper { padding: 5.25rem 1rem 1.75rem; }
+            .content-wrapper { padding: 9rem 1rem 1.75rem; }
             .section-title { font-size: 1.6rem; }
             .card-item { padding: 1.25rem; }
             .contact-methods { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
@@ -1463,12 +1463,13 @@
             .education-card .card-details p { font-size: 0.85rem; }
             .project-item p { font-size: 0.85rem; }
             .subsection-title { font-size: 1.1rem; margin: 2rem 0 1rem; }
+            .hero-eyebrow { display: none; }
             .hero-actions { flex-direction: column; }
             .hero-button { width: 100%; }
         }
 
         @media (max-width: 374px) {
-            .content-wrapper { padding: 5rem 0.75rem 1.5rem; }
+            .content-wrapper { padding: 8.5rem 0.75rem 1.5rem; }
             .section-title { font-size: 1.4rem; }
             .card-item { padding: 1rem; }
             .contact-methods { gap: 0.5rem; }
@@ -1534,6 +1535,11 @@
                     padding-top: calc(5.5rem + env(safe-area-inset-top));
                     padding-left: calc(1.25rem + env(safe-area-inset-left));
                     padding-right: calc(1.25rem + env(safe-area-inset-right));
+                }
+            }
+            @media (max-width: 575px) {
+                .content-wrapper {
+                    padding-top: calc(9rem + env(safe-area-inset-top));
                 }
             }
         }

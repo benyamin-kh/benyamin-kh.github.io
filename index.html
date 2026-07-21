@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Benyamin Khezeli - Computer Engineer & Researcher | PhD Student at Sharif University</title>
-    
+    <title>Benyamin Khezeli | Computer Engineer &amp; PhD Researcher</title>
+
     <meta name="description" content="Benyamin Khezeli - PhD Student in Computer Engineering at Sharif University of Technology. Research in Embedded Systems, Real-time Systems, GPU Reliability, and Storage Systems.">
     <meta name="keywords" content="Benyamin Khezeli, Computer Engineer, Researcher, Sharif University, Embedded Systems, Real-time Systems, GPU, Storage Systems, PhD Student, Iran">
     <meta name="author" content="Benyamin Khezeli">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://benyamin-kh.github.io/">
-    
+
     <meta property="og:title" content="Benyamin Khezeli - Computer Engineer & PhD Researcher">
     <meta property="og:description" content="PhD Student at Sharif University researching Embedded Systems, GPU Reliability, and Storage Systems">
     <meta property="og:image" content="https://benyamin-kh.github.io/profile.jpg">
     <meta property="og:url" content="https://benyamin-kh.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Benyamin Khezeli Portfolio">
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Benyamin Khezeli - Computer Engineer & PhD Researcher">
     <meta name="twitter:description" content="PhD Student at Sharif University researching Embedded Systems and GPU Reliability">
     <meta name="twitter:image" content="https://benyamin-kh.github.io/profile.jpg">
-    
-    <meta name="theme-color" content="#00ff88">
+
+    <meta name="theme-color" content="#5eead4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="logos/sharif_logo.png">
-    
-    <meta name="google-site-verification" content="o2uOq2b-Las2ljIdOtLrMurvZcSVQiXqbKUfuwXWQf4" />
-    
+
+    <meta name="google-site-verification" content="o2uOq2b-Las2ljIdOtLrMurvZcSVQiXqbKUfuwXWQf4">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="logos/sharif_logo.png">
-    
+
+    <script>
+        (function () {
+            let theme = 'dark';
+            try {
+                theme = localStorage.getItem('theme')
+                    || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            } catch (error) {
+                theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -72,53 +83,59 @@
 
     <style>
         :root {
-            --bg-primary: #0a0a12;
-            --bg-secondary: #10101a;
-            --bg-card: rgba(255, 255, 255, 0.025);
-            --bg-card-solid: #161622;
-            --bg-hover: rgba(255, 255, 255, 0.05);
-            --text-primary: #e8e8f0;
-            --text-secondary: #9898aa;
-            --text-muted: #606075;
-            --accent: #00ff88;
-            --accent-secondary: #00d4ff;
-            --accent-dark: #00cc6a;
-            --accent-glow: rgba(0, 255, 136, 0.12);
-            --accent-glow-strong: rgba(0, 255, 136, 0.25);
-            --gradient: linear-gradient(135deg, #00ff88, #00d4ff);
-            --gradient-subtle: linear-gradient(135deg, rgba(0,255,136,0.15), rgba(0,212,255,0.15));
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(0, 255, 136, 0.3);
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --sidebar-width: 320px;
-            --content-max-width: 900px;
+            color-scheme: dark;
+            --bg-primary: #080d1a;
+            --bg-secondary: #0d1424;
+            --bg-card: rgba(18, 29, 49, 0.74);
+            --bg-card-solid: #121d31;
+            --bg-hover: rgba(255, 255, 255, 0.055);
+            --text-primary: #f1f5f9;
+            --text-secondary: #a8b3c7;
+            --text-muted: #6f7d94;
+            --accent: #5eead4;
+            --accent-secondary: #7aa2ff;
+            --accent-dark: #2dd4bf;
+            --on-accent: #07131d;
+            --accent-glow: rgba(94, 234, 212, 0.1);
+            --accent-glow-strong: rgba(94, 234, 212, 0.2);
+            --secondary-glow: rgba(122, 162, 255, 0.12);
+            --gradient: linear-gradient(135deg, #5eead4, #7aa2ff);
+            --gradient-subtle: linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(122, 162, 255, 0.12));
+            --border: rgba(148, 163, 184, 0.1);
+            --border-hover: rgba(94, 234, 212, 0.32);
+            --glass-bg: rgba(18, 29, 49, 0.62);
+            --glass-border: rgba(148, 163, 184, 0.14);
+            --glass-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+            --sidebar-width: 304px;
+            --content-max-width: 980px;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         [data-theme="light"] {
-            --bg-primary: #f5f7fa;
+            color-scheme: light;
+            --bg-primary: #f4f7fb;
             --bg-secondary: #ffffff;
-            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.88);
             --bg-card-solid: #ffffff;
-            --bg-hover: rgba(0, 0, 0, 0.025);
-            --text-primary: #1a1a2e;
-            --text-secondary: #555570;
-            --text-muted: #9898a8;
-            --accent: #00b862;
-            --accent-secondary: #0098cc;
-            --accent-dark: #009952;
-            --accent-glow: rgba(0, 184, 98, 0.08);
-            --accent-glow-strong: rgba(0, 184, 98, 0.15);
-            --gradient: linear-gradient(135deg, #00b862, #0098cc);
-            --gradient-subtle: linear-gradient(135deg, rgba(0,184,98,0.08), rgba(0,152,204,0.08));
-            --border: rgba(0, 0, 0, 0.07);
-            --border-hover: rgba(0, 184, 98, 0.25);
+            --bg-hover: rgba(15, 23, 42, 0.035);
+            --text-primary: #162033;
+            --text-secondary: #526078;
+            --text-muted: #8490a3;
+            --accent: #0f766e;
+            --accent-secondary: #3159b8;
+            --accent-dark: #0d655f;
+            --on-accent: #ffffff;
+            --accent-glow: rgba(15, 118, 110, 0.08);
+            --accent-glow-strong: rgba(15, 118, 110, 0.16);
+            --secondary-glow: rgba(49, 89, 184, 0.09);
+            --gradient: linear-gradient(135deg, #0f766e, #3159b8);
+            --gradient-subtle: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(49, 89, 184, 0.08));
+            --border: rgba(15, 23, 42, 0.08);
+            --border-hover: rgba(15, 118, 110, 0.25);
             --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(0, 0, 0, 0.06);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            --glass-border: rgba(15, 23, 42, 0.08);
+            --glass-shadow: 0 18px 50px rgba(31, 43, 67, 0.08);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -149,7 +166,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(100px);
-            opacity: 0.12;
+            opacity: 0.07;
             will-change: transform;
         }
         .bg-orb-1 {
@@ -166,11 +183,11 @@
         }
         .bg-orb-3 {
             width: 350px; height: 350px;
-            background: #7c3aed;
+            background: #6366f1;
             top: 45%; left: -100px;
             animation: orbFloat 35s ease-in-out infinite 5s;
         }
-        [data-theme="light"] .bg-orb { opacity: 0.06; }
+        [data-theme="light"] .bg-orb { opacity: 0.045; }
 
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -231,7 +248,7 @@
             position: fixed;
             bottom: 2rem; right: 2rem;
             background: var(--gradient);
-            color: #0a0a12;
+            color: var(--on-accent);
             width: 48px; height: 48px;
             border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
@@ -239,7 +256,7 @@
             opacity: 0; visibility: hidden;
             transition: all 0.4s var(--ease-out-expo);
             z-index: 999;
-            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.25);
+            box-shadow: 0 4px 20px var(--accent-glow-strong);
             border: none;
             font-size: 1rem;
             font-weight: 700;
@@ -247,7 +264,7 @@
         .back-to-top.visible { opacity: 1; visibility: visible; }
         .back-to-top:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.35);
+            box-shadow: 0 8px 30px var(--accent-glow-strong);
         }
 
         .sidebar {
@@ -282,8 +299,7 @@
             inset: -4px;
             border-radius: 50%;
             background: var(--gradient);
-            opacity: 0.8;
-            animation: profileGlow 4s ease-in-out infinite;
+            opacity: 0.78;
         }
         .profile-img-wrapper::after {
             content: '';
@@ -291,13 +307,8 @@
             inset: -12px;
             border-radius: 50%;
             background: var(--gradient);
-            opacity: 0.15;
+            opacity: 0.1;
             filter: blur(15px);
-            animation: profileGlow 4s ease-in-out infinite;
-        }
-        @keyframes profileGlow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
         }
 
         .profile-img {
@@ -341,19 +352,19 @@
             margin-top: 0.5rem;
             padding: 0.55rem 1.25rem;
             background: var(--gradient);
-            color: #0a0a12;
+            color: var(--on-accent);
             text-decoration: none;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 700;
             transition: all 0.4s var(--ease-out-expo);
             letter-spacing: 0.3px;
-            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+            box-shadow: 0 4px 15px var(--accent-glow-strong);
         }
         .cv-download-sidebar:hover {
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 6px 25px rgba(0, 255, 136, 0.35);
-            color: #0a0a12;
+            box-shadow: 0 6px 25px var(--accent-glow-strong);
+            color: var(--on-accent);
         }
 
         .nav-menu { list-style: none; padding: 0; margin: 0; }
@@ -524,11 +535,164 @@
             letter-spacing: -0.3px;
         }
 
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.8fr);
+            gap: 2rem;
+            align-items: stretch;
+            margin-bottom: 2.25rem;
+        }
+        .hero-copy {
+            padding: 0.25rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: fit-content;
+            margin-bottom: 1.1rem;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
+        }
+        .hero-title {
+            max-width: 720px;
+            margin: 0 0 1.25rem;
+            color: var(--text-primary);
+            font-size: clamp(2.4rem, 5vw, 4.25rem);
+            font-weight: 800;
+            letter-spacing: -0.055em;
+            line-height: 1.06;
+        }
+        .hero-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-lead {
+            max-width: 64ch;
+            margin: 0 0 1.75rem;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            min-height: 46px;
+            padding: 0.72rem 1.15rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            text-decoration: none;
+            font-size: 0.86rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .hero-button.primary {
+            color: var(--on-accent);
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 10px 28px var(--accent-glow-strong);
+        }
+        .hero-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover);
+            box-shadow: 0 10px 28px var(--accent-glow);
+        }
+        .hero-button.primary:hover {
+            color: var(--on-accent);
+            box-shadow: 0 14px 34px var(--accent-glow-strong);
+        }
+        .hero-facts {
+            display: grid;
+            gap: 0.75rem;
+            padding: 1rem;
+            margin: 0;
+            list-style: none;
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            background: var(--glass-bg);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-fact {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            min-height: 82px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--bg-hover);
+        }
+        .hero-fact-icon {
+            display: grid;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            place-items: center;
+            border-radius: 11px;
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+        .hero-fact-label {
+            display: block;
+            margin-bottom: 0.15rem;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+        .hero-fact-value {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.88rem;
+            font-weight: 650;
+            line-height: 1.4;
+        }
+        .biography-card {
+            padding: 1.75rem 2rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            background: var(--glass-bg);
+        }
+        .biography-title {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
         .about-content {
             font-size: 1.05rem;
             line-height: 1.85;
             color: var(--text-secondary);
-            text-align: justify;
+            text-align: left;
+            max-width: 72ch;
         }
         .about-content p { margin-bottom: 1rem; }
         .about-content a {
@@ -634,14 +798,16 @@
         }
         .card-details strong { color: var(--text-primary); font-weight: 600; }
 
-        .card-item, .list-item, .publication-item, .presentation-item, .project-item {
+        .card-item, .list-item, .publication-item, .presentation-item, .project-item,
+        .skills-container, .contact-card, .hero-fact {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo),
                         background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .card-item.visible, .list-item.visible, .publication-item.visible,
-        .presentation-item.visible, .project-item.visible {
+        .presentation-item.visible, .project-item.visible, .skills-container.visible,
+        .contact-card.visible, .hero-fact.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -745,7 +911,7 @@
             margin-bottom: 0.6rem;
         }
         .status-badge.ongoing {
-            background: rgba(0, 255, 136, 0.1);
+            background: var(--accent-glow);
             color: var(--accent);
             border: 1px solid var(--border-hover);
         }
@@ -757,9 +923,9 @@
             animation: pulse-dot 2s ease-in-out infinite;
         }
         .status-badge.completed {
-            background: rgba(0, 212, 255, 0.1);
+            background: var(--secondary-glow);
             color: var(--accent-secondary);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid var(--secondary-glow);
         }
         @keyframes pulse-dot {
             0%, 100% { opacity: 1; transform: scale(1); }
@@ -772,14 +938,14 @@
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.75rem;
             margin-bottom: 1.25rem;
             transition: all 0.4s var(--ease-out-expo);
             border-left: 3px solid transparent;
             border-image: var(--gradient) 1;
             border-image-slice: 0 0 0 1;
         }
-        .publication-item p { margin-bottom: 0.4rem; }
+        .publication-item p { margin-bottom: 0.55rem; }
         .publication-item p:last-child { margin-bottom: 0; }
         .publication-item:hover {
             transform: translateX(6px);
@@ -794,6 +960,36 @@
         .publication-item a:hover {
             color: var(--accent-secondary);
             text-decoration: underline;
+        }
+        .publication-title {
+            color: var(--text-primary);
+            font-size: 1.12rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 0.25rem;
+        }
+        .publication-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.22rem 0.65rem;
+            border: 1px solid var(--border-hover);
+            border-radius: 999px;
+            color: var(--accent);
+            background: var(--accent-glow);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .presentations-scroll {
@@ -903,7 +1099,7 @@
             position: absolute;
             bottom: -40px; left: -40px;
             width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--secondary-glow) 0%, transparent 70%);
             opacity: 0.4;
             border-radius: 50%;
             pointer-events: none;
@@ -996,7 +1192,7 @@
             padding: 0.2rem 0.6rem;
             border-radius: 8px;
             background: var(--gradient);
-            color: #0a0a12;
+            color: var(--on-accent);
             font-weight: 700;
             font-family: 'Fira Code', monospace;
             font-size: 0.8rem;
@@ -1133,9 +1329,12 @@
             .main-content { margin-left: 0; }
             .content-wrapper { max-width: 100%; padding: 0; min-height: auto; display: block; }
             section { display: block !important; page-break-inside: avoid; animation: none !important; }
-            .card-item, .list-item, .publication-item, .presentation-item, .project-item {
+            .card-item, .list-item, .publication-item, .presentation-item, .project-item,
+            .skills-container, .contact-card, .hero-fact {
                 opacity: 1 !important; transform: none !important; page-break-inside: avoid; border: 1px solid #ddd;
             }
+            .hero { display: block; }
+            .hero-facts, .hero-actions { display: none; }
             a { color: black; text-decoration: underline; }
         }
 
@@ -1158,9 +1357,12 @@
             .main-content { margin-left: 0; }
             .mobile-toggle { display: block; }
             .theme-toggle { top: 1rem; right: 4.5rem; }
-            .content-wrapper { padding: 2.5rem 2rem; min-height: 100vh; }
+            .content-wrapper { padding: 5.5rem 2rem 2.5rem; min-height: 100vh; }
             .section-title { font-size: 2rem; margin-bottom: 2rem; }
             .subsection-title { font-size: 1.2rem; margin: 2.5rem 0 1.25rem; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-facts { grid-template-columns: repeat(3, 1fr); }
+            .hero-fact { min-height: 100%; flex-direction: column; align-items: flex-start; }
 
             .courses-container { grid-template-columns: 1fr; }
             .contact-methods { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -1175,9 +1377,15 @@
 
         @media (max-width: 767px) {
             .sidebar { width: 280px; }
-            .content-wrapper { padding: 2rem 1.25rem; }
+            .content-wrapper { padding: 5.5rem 1.25rem 2rem; }
             .section-title { font-size: 1.75rem; }
             .about-content { font-size: 0.95rem; text-align: left; }
+            .hero { gap: 1.5rem; margin-bottom: 1.75rem; }
+            .hero-title { font-size: clamp(2.15rem, 11vw, 3.2rem); }
+            .hero-lead { font-size: 0.98rem; }
+            .hero-facts { grid-template-columns: 1fr; }
+            .hero-fact { min-height: auto; flex-direction: row; align-items: center; }
+            .biography-card { padding: 1.4rem; }
 
             .education-container { padding-left: 1.5rem; }
             .education-container::before { left: 4px; }
@@ -1236,7 +1444,7 @@
             .bg-orb-2 { width: 200px; height: 200px; filter: blur(60px); }
 
             .card-item, .list-item, .publication-item, .presentation-item,
-            .skills-container, .contact-card {
+            .skills-container, .contact-card, .hero-facts {
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 background: var(--bg-card-solid);
@@ -1244,7 +1452,7 @@
         }
 
         @media (max-width: 575px) {
-            .content-wrapper { padding: 1.75rem 1rem; }
+            .content-wrapper { padding: 5.25rem 1rem 1.75rem; }
             .section-title { font-size: 1.6rem; }
             .card-item { padding: 1.25rem; }
             .contact-methods { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
@@ -1255,10 +1463,14 @@
             .education-card .card-details p { font-size: 0.85rem; }
             .project-item p { font-size: 0.85rem; }
             .subsection-title { font-size: 1.1rem; margin: 2rem 0 1rem; }
+            .hero-eyebrow { display: none; }
+            .hero-title { padding-right: 7rem; }
+            .hero-actions { flex-direction: column; }
+            .hero-button { width: 100%; }
         }
 
         @media (max-width: 374px) {
-            .content-wrapper { padding: 1.5rem 0.75rem; }
+            .content-wrapper { padding: 5rem 0.75rem 1.5rem; }
             .section-title { font-size: 1.4rem; }
             .card-item { padding: 1rem; }
             .contact-methods { gap: 0.5rem; }
@@ -1302,7 +1514,7 @@
                 padding-left: calc(1.5rem + env(safe-area-inset-left));
             }
             .content-wrapper {
-                padding-left: calc(2.5rem + env(safe-area-inset-right));
+                padding-left: calc(2.5rem + env(safe-area-inset-left));
                 padding-right: calc(2.5rem + env(safe-area-inset-right));
             }
             .back-to-top {
@@ -1321,6 +1533,7 @@
             }
             @media (max-width: 991px) {
                 .content-wrapper {
+                    padding-top: calc(5.5rem + env(safe-area-inset-top));
                     padding-left: calc(1.25rem + env(safe-area-inset-left));
                     padding-right: calc(1.25rem + env(safe-area-inset-right));
                 }
@@ -1335,7 +1548,8 @@
             }
             html { scroll-behavior: auto; }
             section.active-page { animation: none; opacity: 1; transform: none; }
-            .card-item, .list-item, .publication-item, .presentation-item, .project-item {
+            .card-item, .list-item, .publication-item, .presentation-item, .project-item,
+            .skills-container, .contact-card, .hero-fact {
                 opacity: 1 !important; transform: none !important;
             }
         }
@@ -1350,22 +1564,22 @@
         <div class="bg-orb bg-orb-3"></div>
     </div>
 
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-moon" id="theme-icon"></i>
     </button>
 
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
 
     <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+    <aside class="sidebar" id="sidebar" aria-label="Profile and navigation">
         <div class="sidebar-content">
             <div class="profile-section">
                 <div class="profile-img-wrapper">
-                    <img src="profile.jpg" alt="Benyamin Khezeli - PhD Student at Sharif University" class="profile-img" loading="lazy">
+                    <img src="profile.jpg" alt="Benyamin Khezeli - PhD Student at Sharif University" class="profile-img" width="150" height="150" fetchpriority="high">
                 </div>
                 <h1 class="profile-name">Benyamin Khezeli</h1>
                 <p class="profile-title">PhD Student</p>
@@ -1379,7 +1593,7 @@
                 </a>
             </div>
 
-            <nav>
+            <nav aria-label="Primary navigation">
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#about" class="nav-link active"><i class="fas fa-user nav-icon"></i>About</a></li>
                     <li class="nav-item"><a href="#education" class="nav-link"><i class="fas fa-graduation-cap nav-icon"></i>Education</a></li>
@@ -1405,21 +1619,48 @@
         </div>
     </aside>
 
-    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+    <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-controls="sidebar" aria-expanded="false"><i class="fas fa-bars"></i></button>
 
-    <main class="main-content" id="main-content" role="main">
+    <main class="main-content" id="main-content">
         <div class="content-wrapper">
 
             <!-- About -->
             <section id="about" aria-labelledby="about-title">
-                <h2 class="section-title" id="about-title">About Me</h2>
-                <div class="about-content">
-                    <p>
-                        I obtained my <strong>Bachelor of Science in Computer Engineering</strong> from the University of Guilan, Rasht, Iran, in 2022. Subsequently, I completed my <strong>Master's degree</strong> in the same discipline at Amirkabir University of Technology (Tehran Polytechnic). During my master's program, I was affiliated with the Laboratory for Design and Analysis of Dependable Systems (DADS), under the supervision of <a href="https://scholar.google.com/citations?hl=en&user=ZA9rRWAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Hamid Reza Zarandi</a> and <a href="https://scholar.google.com/citations?hl=en&user=gJkJ9wUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Elham Cheshmikhani</a>.
-                    </p>
-                    <p>
-                        Currently, I am pursuing my <strong>PhD in Computer Engineering</strong> at Sharif University of Technology. I work as a Research Assistant in the Embedded Systems Research Laboratory <a href="http://esrlab.ce.sharif.edu/people/" target="_blank" rel="noopener noreferrer">(ESRLab)</a>, guided by <a href="https://scholar.google.com/citations?hl=en&user=H7G8s68AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Alireza Ejlali</a>.
-                    </p>
+                <div class="hero">
+                    <div class="hero-copy">
+                        <span class="hero-eyebrow">Computer Engineering · Research</span>
+                        <h2 class="hero-title" id="about-title">Building more <span>dependable computing systems.</span></h2>
+                        <p class="hero-lead">I am a PhD researcher exploring reliable, efficient computing—from embedded and GPU systems to emerging memory architectures.</p>
+                        <div class="hero-actions">
+                            <a href="#research" class="hero-button primary" data-section-link="research">Explore my research <i class="fas fa-arrow-right fa-xs"></i></a>
+                            <a href="#publications" class="hero-button" data-section-link="publications"><i class="fas fa-book-open"></i> View publications</a>
+                        </div>
+                    </div>
+                    <ul class="hero-facts" aria-label="Research profile">
+                        <li class="hero-fact">
+                            <span class="hero-fact-icon"><i class="fas fa-user-graduate"></i></span>
+                            <span><span class="hero-fact-label">Current role</span><span class="hero-fact-value">PhD Researcher</span></span>
+                        </li>
+                        <li class="hero-fact">
+                            <span class="hero-fact-icon"><i class="fas fa-flask"></i></span>
+                            <span><span class="hero-fact-label">Laboratory</span><span class="hero-fact-value">Embedded Systems Research Lab</span></span>
+                        </li>
+                        <li class="hero-fact">
+                            <span class="hero-fact-icon"><i class="fas fa-microchip"></i></span>
+                            <span><span class="hero-fact-label">Core focus</span><span class="hero-fact-value">Dependable Systems</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="biography-card">
+                    <h3 class="biography-title">Background</h3>
+                    <div class="about-content">
+                        <p>
+                            I obtained my <strong>Bachelor of Science in Computer Engineering</strong> from the University of Guilan, Rasht, Iran, in 2022. Subsequently, I completed my <strong>Master's degree</strong> in the same discipline at Amirkabir University of Technology (Tehran Polytechnic). During my master's program, I was affiliated with the Laboratory for Design and Analysis of Dependable Systems (DADS), under the supervision of <a href="https://scholar.google.com/citations?hl=en&user=ZA9rRWAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Hamid Reza Zarandi</a> and <a href="https://scholar.google.com/citations?hl=en&user=gJkJ9wUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Elham Cheshmikhani</a>.
+                        </p>
+                        <p>
+                            Currently, I am pursuing my <strong>PhD in Computer Engineering</strong> at Sharif University of Technology. I work as a Research Assistant in the Embedded Systems Research Laboratory <a href="http://esrlab.ce.sharif.edu/people/" target="_blank" rel="noopener noreferrer">(ESRLab)</a>, guided by <a href="https://scholar.google.com/citations?hl=en&user=H7G8s68AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Dr. Alireza Ejlali</a>.
+                        </p>
+                    </div>
                 </div>
                 <div class="research-interests">
                     <h3 class="interests-label">Research Interests</h3>
@@ -1526,9 +1767,12 @@
             <section id="publications" aria-labelledby="publications-title">
                 <h2 class="section-title" id="publications-title">Publications</h2>
                 <div class="publication-item">
-                    <p><strong>Online Soft Error Tolerance in ReRAM Crossbars for Deep Learning Accelerators</strong></p>
-                    <p>Benyamin Khezeli, Hamid Reza Zarandi, Elham Cheshmikhani.</p>
-                    <p><a href="https://arxiv.org/abs/2412.03089" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt fa-xs"></i> arXiv:2412.03089 [cs.AR]</a></p>
+                    <p class="publication-title">Online Soft Error Tolerance in ReRAM Crossbars for Deep Learning Accelerators</p>
+                    <p class="publication-authors"><strong>Benyamin Khezeli</strong>, Hamid Reza Zarandi, and Elham Cheshmikhani</p>
+                    <div class="publication-meta">
+                        <span class="publication-badge">Preprint</span>
+                        <a href="https://arxiv.org/abs/2412.03089" target="_blank" rel="noopener noreferrer">arXiv:2412.03089 · cs.AR <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a>
+                    </div>
                 </div>
             </section>
 
@@ -1536,10 +1780,10 @@
             <section id="presentations" aria-labelledby="presentations-title">
                 <h2 class="section-title" id="presentations-title">Presentations</h2>
                 <div class="presentations-scroll">
-                    <div class="presentation-item"><p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
-                    <div class="presentation-item"><p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="presentation-link">View Presentation <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
-                    <div class="presentation-item"><p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
-                    <div class="presentation-item"><p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View Slide <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                    <div class="presentation-item"><p><strong>Master's Thesis Slides:</strong> <a href="https://drive.google.com/file/d/1qeHPxq7yo36R8f2oP0we7xQgD4mdvlaj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View slides <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                    <div class="presentation-item"><p><strong>Master's Seminar Presentation:</strong> <a href="https://www.aparat.com/v/e138n32" target="_blank" rel="noopener noreferrer" class="presentation-link">Watch presentation <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                    <div class="presentation-item"><p><strong>Advanced Storage Systems Slides:</strong> <a href="https://drive.google.com/file/d/1KLdW2cBrIGlRPiok5AmlpO2WscbGSMHe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View slides <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
+                    <div class="presentation-item"><p><strong>Edge Computing Slides:</strong> <a href="https://drive.google.com/file/d/1aG_6zlbrUUkfBxmwkF3e01KZOArL77WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">View slides <i class="fas fa-external-link-alt fa-xs"></i></a></p></div>
                     <div class="presentation-item">
                         <p><strong>Memory Technologies Slides:</strong>
                             <a href="https://drive.google.com/file/d/1Q8vM7J04LjwtUD-z800ZW3gQ_uHhS6rz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="presentation-link">1 <i class="fas fa-external-link-alt fa-xs"></i></a>
@@ -1560,7 +1804,7 @@
 
             <!-- Honors -->
             <section id="honors" aria-labelledby="honors-title">
-                <h2 class="section-title" id="honors-title">Honors & Awards</h2>
+                <h2 class="section-title" id="honors-title">Honors &amp; Awards</h2>
                 <div class="list-item"><p>Accepted as a special talent for the Master's program in the field of Computer Architecture from Amirkabir University of Technology (AUT), Iran University of Science and Technology (IUST), Shahid Beheshti University, K. N. Toosi University of Technology, and Guilan University.</p></div>
                 <div class="list-item"><p>Accepted as a special talent for the PhD program in the field of Computer Architecture from Sharif University of Technology (SUT) and Amirkabir University of Technology (AUT).</p></div>
                 <div class="list-item"><p>Accepted as a special talent for the PhD program in the field of AI from Amirkabir University of Technology (AUT).</p></div>
@@ -1603,7 +1847,7 @@
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4><i class="fas fa-tools"></i>Tools & Simulators</h4>
+                            <h4><i class="fas fa-tools"></i>Tools &amp; Simulators</h4>
                             <div class="skill-items">
                                 <span class="skill-tag">HSPICE</span><span class="skill-tag">Xilinx Vivado</span><span class="skill-tag">gem5</span><span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Git</span><span class="skill-tag">Proteus</span><span class="skill-tag">VS Code</span><span class="skill-tag">ModelSim</span>
                             </div>
@@ -1717,8 +1961,7 @@
         const themeIcon = document.getElementById('theme-icon');
         const htmlElement = document.documentElement;
 
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        htmlElement.setAttribute('data-theme', currentTheme);
+        const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
         updateThemeIcon(currentTheme);
 
         themeToggle.addEventListener('click', () => {
@@ -1730,6 +1973,11 @@
 
         function updateThemeIcon(theme) {
             themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+            document.querySelector('meta[name="theme-color"]').setAttribute(
+                'content',
+                theme === 'dark' ? '#080d1a' : '#f4f7fb'
+            );
         }
 
         const backToTop = document.getElementById('back-to-top');
@@ -1757,11 +2005,16 @@
         function closeMobileMenu() {
             sidebar.classList.remove('active');
             mobileOverlay.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
         }
 
         mobileToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
+            const isOpen = sidebar.classList.contains('active');
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileOverlay.setAttribute('aria-hidden', String(!isOpen));
         });
 
         mobileOverlay.addEventListener('click', closeMobileMenu);
@@ -1785,7 +2038,7 @@
             if (activeSection) {
                 // Remove visible from stagger children
                 activeSection.querySelectorAll(
-                    '.card-item.visible, .list-item.visible, .publication-item.visible, .presentation-item.visible, .project-item.visible'
+                    '.card-item.visible, .list-item.visible, .publication-item.visible, .presentation-item.visible, .project-item.visible, .skills-container.visible, .contact-card.visible, .hero-fact.visible'
                 ).forEach(el => el.classList.remove('visible'));
                 activeSection.classList.remove('active-page');
             }
@@ -1797,11 +2050,11 @@
             target.classList.add('active-page');
 
             // Scroll to top smoothly
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, behavior: 'auto' });
 
             // Stagger child elements with a slight initial delay
             const children = target.querySelectorAll(
-                '.card-item, .list-item, .publication-item, .presentation-item, .project-item'
+                '.card-item, .list-item, .publication-item, .presentation-item, .project-item, .skills-container, .contact-card, .hero-fact'
             );
             children.forEach((child, index) => {
                 setTimeout(() => {
@@ -1838,7 +2091,14 @@
             });
         });
 
-       
+        document.querySelectorAll('[data-section-link]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection(this.dataset.sectionLink);
+            });
+        });
+
+
         window.addEventListener('popstate', (e) => {
             const sectionId = (e.state && e.state.section) || location.hash.slice(1) || 'about';
             isTransitioning = false; // reset lock for back/forward
@@ -1846,7 +2106,12 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeMobileMenu();
+                mobileToggle.focus();
+                return;
+            }
+
             if (!e.altKey) return;
 
             const sectionIds = Array.from(sections).map(s => s.id);
@@ -1864,13 +2129,10 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.body.style.visibility = 'visible';
-
-           
             const initialSection = location.hash.slice(1) || 'about';
             showSection(initialSection, false);
 
-         
+
             history.replaceState({ section: initialSection }, '', `#${initialSection}`);
         });
     </script>
